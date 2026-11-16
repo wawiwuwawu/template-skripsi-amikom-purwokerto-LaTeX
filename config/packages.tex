@@ -1,0 +1,54 @@
+%============================================================
+% PAKET-PAKET LATEX (khusus engine XeLaTeX)
+% Compile dengan: latexmk -xelatex main.tex
+% Font Times New Roman diambil dari font sistem
+% (tersedia di Windows/macOS dan Overleaf).
+%============================================================
+
+% ── Font & dasar ─────────────────────────────────────────────
+\usepackage{fontspec}                 % pengganti inputenc/fontenc di XeLaTeX
+\setmainfont{Times New Roman}         % sesuai ketentuan kampus
+\usepackage[a4paper,
+            left=4cm, right=3cm,      % penjilidan: kiri 4 cm
+            top=4cm,  bottom=3cm]{geometry}
+\usepackage{setspace}                 % \singlespacing, \onehalfspacing, \doublespacing
+\usepackage{indentfirst}              % paragraf pertama juga menjorok
+\usepackage{graphicx}
+\usepackage{xcolor}                   % dipakai untuk teks tersembunyi (putih)
+\usepackage{array}
+\usepackage{longtable}                % tabel multi-halaman dengan "(Lanjutan)"
+\usepackage{enumitem}
+\usepackage{amsmath}                  % rumus matematika + \eqref
+
+% ── Judul bab/sub-bab & daftar isi ───────────────────────────
+\usepackage{titlesec}
+\usepackage[titles]{tocloft}          % opsi `titles`: biar tidak bentrok titlesec
+
+% ── Caption tabel & gambar ───────────────────────────────────
+\usepackage{caption}
+
+% ── Header/footer & halaman ──────────────────────────────────
+\usepackage{fancyhdr}
+\usepackage{pdfpages}                 % memasukkan scan (kartu bimbingan) di lampiran
+\usepackage{etoolbox}
+
+% ── Bahasa & bibliografi ─────────────────────────────────────
+\usepackage[indonesian]{babel}
+\usepackage{csquotes}
+\usepackage[%
+  backend=biber,
+  style=authoryear,
+  sorting=nyt,          % urut nama (belakang dulu), tahun, judul — alfabetis
+  giveninits=true,      % nama depan ditulis inisial: Wibowo, A. R.
+  maxbibnames=2,        % 1–2 pengarang di daftar pustaka: tulis semua;
+  minbibnames=1,        % 3+ pengarang : pengarang pertama + "dkk."
+  maxnames=2,           % batas yang sama untuk sitasi dalam teks
+  minnames=1,
+  uniquename=false,
+  uniquelist=false,
+  dashed=false          % pengarang berulang tetap ditulis penuh
+]{biblatex}
+\addbibresource{refs/references.bib}
+
+% ── Hyperlink (selalu terakhir) ──────────────────────────────
+\usepackage[hidelinks]{hyperref}

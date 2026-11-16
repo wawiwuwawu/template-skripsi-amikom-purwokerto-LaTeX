@@ -1,0 +1,35 @@
+%============================================================
+% HALAMAN DAFTAR-DAFTAR
+%   Daftar Isi → Daftar Tabel → Daftar Gambar →
+%   Daftar Istilah (opsional) → Daftar Lampiran.
+%   Teks daftar: Times New Roman 12, spasi 1,5, tidak tebal
+%   (entri BAB & sub-bab otomatis tebal).
+%============================================================
+
+% ── DAFTAR ISI ──
+{\onehalfspacing
+\tableofcontents
+\TocHalaman{DAFTAR ISI}
+}
+
+% ── DAFTAR TABEL ──
+{\onehalfspacing
+\listoftables
+\TocHalaman{DAFTAR TABEL}
+}
+
+% ── DAFTAR GAMBAR ──
+{\onehalfspacing
+\listoffigures
+\TocHalaman{DAFTAR GAMBAR}
+}
+
+% ── DAFTAR ISTILAH (jika ada — atur di config/toggles.tex) ──
+\ifdaftaristilah
+  \input{pages/daftar_istilah}
+\fi
+
+% ── DAFTAR LAMPIRAN (tanpa titik-titik & nomor halaman) ──
+{\onehalfspacing
+\listoflampiran
+}

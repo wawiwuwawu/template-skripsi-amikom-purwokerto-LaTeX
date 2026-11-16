@@ -1,0 +1,55 @@
+%============================================================
+% TEMPLATE SKRIPSI — UNIVERSITAS AMIKOM PURWOKERTO
+% Engine  : XeLaTeX (font Times New Roman dari sistem)
+% Compile : latexmk -xelatex main.tex   (atau: make skripsi)
+% Overleaf: set Menu > Compiler > XeLaTeX
+%============================================================
+% Satu file konten diedit sekali, seluruh dokumen tersusun dari:
+%   config/    — identitas, toggle, paket, font, format
+%   formats/   — halaman-halaman awal (cover s.d. motto)
+%   pages/     — kata pengantar, daftar-daftar, abstrak, lampiran
+%   chapters/  — Bab I s.d. Bab V
+%   refs/      — daftar pustaka (BibTeX)
+%============================================================
+\documentclass[12pt,a4paper,oneside]{report}
+
+\input{config/variables}   % identitas skripsi (edit dulu!)
+\input{config/toggles}     % pilihan halaman (2 pembimbing, dll.)
+\input{config/packages}    % paket + biblatex
+\input{config/fonts}       % makro font
+\input{config/formatting}  % seluruh aturan format
+
+\begin{document}
+
+% ── BAGIAN AWAL (nomor halaman romawi, mulai i di sampul) ──
+\pagestyle{plain}            % nomor halaman: bawah tengah
+\pagenumbering{roman}
+
+\input{formats/cover}          % HALAMAN SAMPUL        (i)
+\input{formats/halaman_judul}  % HALAMAN JUDUL
+\input{formats/persetujuan}    % HALAMAN PERSETUJUAN
+\input{formats/pengesahan}     % HALAMAN PENGESAHAN
+\input{formats/pernyataan}     % HALAMAN PERNYATAAN KEASLIAN
+\input{formats/persembahan}    % HALAMAN PERSEMBAHAN
+\input{formats/motto}          % HALAMAN MOTTO
+\input{pages/kata_pengantar}   % KATA PENGANTAR
+\input{pages/daftar_daftar}    % DAFTAR ISI/TABEL/GAMBAR/ISTILAH/LAMPIRAN
+\input{pages/abstrak}          % ABSTRAK
+\input{pages/abstract}         % ABSTRACT
+
+% ── BAGIAN INTI (nomor halaman arab, mulai 1 di Bab I) ──
+\pagestyle{utama}            % halaman lanjutan: nomor kanan atas
+\pagenumbering{arabic}
+% Awal setiap bab otomatis memakai nomor bawah tengah (plain).
+
+\input{chapters/bab1}
+\input{chapters/bab2}
+\input{chapters/bab3}
+\input{chapters/bab4}
+\input{chapters/bab5}
+
+% ── BAGIAN AKHIR (tanpa nomor halaman) ──
+\input{pages/daftar_pustaka}
+\input{pages/lampiran}
+
+\end{document}

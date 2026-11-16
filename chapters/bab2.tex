@@ -1,0 +1,210 @@
+%============================================================
+% BAB II — TINJAUAN PUSTAKA
+% Struktur: A. Landasan Teori, B. Penelitian Sebelumnya.
+% Bab ini sekaligus menjadi contoh pemakaian:
+%   - tabel biasa (caption di atas)        : Tabel 2.1
+%   - gambar  (caption di bawah)           : Gambar 2.1 & 2.2
+%   - rumus matematika                     : Persamaan 2.1
+%   - tabel multi-halaman "(Lanjutan)"     : Tabel 2.2
+%   - tabel penelitian sebelumnya (3 artikel: 2 nasional,
+%     1 internasional)                     : Tabel 2.3
+%============================================================
+\chapter{TINJAUAN PUSTAKA}
+
+\section{Landasan Teori}
+Menguraikan teori-teori yang menunjang penulisan/penelitian.
+Referensi ataupun buku baru yang dirujuk harus dicantumkan
+sebagai rujukan dan harus dicantumkan dalam daftar pustaka
+\parencite{winowatan2009}. Perumusan landasan teori hendaknya
+memenuhi ketentuan sebagai berikut:
+\begin{enumerate}
+  \item Pustaka yang digunakan terbaru, relevan, dan asli dari karya ilmiah;
+  \item Apabila sumber informasi dan data yang dirujuk berasal dari buku,
+        usahakan mencari terbitan edisi paling akhir;
+  \item Penulisan landasan teori tidak mengandung unsur plagiat.
+\end{enumerate}
+
+Uraian teori yang memerlukan data pendukung dalam bentuk tabel
+maupun gambar, format penulisan nama tabel dan gambar disajikan
+seperti Tabel~\ref{tab:data-mahasiswa} dan
+Gambar~\ref{fig:logo-lama}. Nomor urut tabel dan gambar
+disesuaikan dengan nomor bab, diikuti dengan nomor urut dari tabel
+atau gambar tersebut.
+
+% ── Contoh tabel: caption di ATAS tabel, isi Times New Roman 10,
+%    spasi 1, justify. Dipanggil di dalam paragraf (wajib). ──
+\begin{tabel}{@{}c l l l@{}}
+  \caption{Data mahasiswa}\label{tab:data-mahasiswa}\\
+  \hline
+  No & NIM & Nama Mahasiswa & Konsentrasi\\
+  \hline
+  \endfirsthead
+  \TabelLanjutan{4}{Data mahasiswa}\\
+  \hline
+  No & NIM & Nama Mahasiswa & Konsentrasi\\
+  \hline
+  \endhead
+  \hline
+  \endfoot
+  \endlastfoot
+  1 & 11.11.0001 & Mahasiswa 1 & Konsentrasi 1\\
+  2 & 11.11.0002 & Mahasiswa 2 & Konsentrasi 2\\
+\end{tabel}
+
+Terdapat perubahan bentuk logo Universitas Amikom Purwokerto,
+logo sebelumnya ditunjukkan pada Gambar~\ref{fig:logo-lama},
+sedangkan logo terbaru ditunjukkan pada Gambar~\ref{fig:logo-baru}.
+
+% ── Contoh gambar: caption DI BAWAH gambar ──
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=3cm]{assets/amikom/contoh/logo_lama.png}
+  \caption{Logo lama}\label{fig:logo-lama}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=4cm]{assets/amikom/contoh/logo_baru.png}
+  \caption{Logo baru}\label{fig:logo-baru}
+\end{figure}
+
+Contoh penulisan rumus matematika menggunakan mode matematika
+LaTeX. Tingkat akurasi suatu pengujian dapat dihitung menggunakan
+persamaan~\eqref{eq:contoh-bab2}.
+\begin{equation}
+  Akurasi = \frac{TP + TN}{TP + TN + FP + FN} \times 100\%
+  \label{eq:contoh-bab2}
+\end{equation}
+dengan $TP$ adalah \emph{true positive}, $TN$ adalah \emph{true
+negative}, $FP$ adalah \emph{false positive}, dan $FN$ adalah
+\emph{false negative}.
+
+\section{Penelitian Sebelumnya}
+Penelitian sebelumnya berisi rujukan dari jurnal atau prosiding
+minimal 3 artikel yang terdiri dari 2 artikel jurnal nasional dan
+1 artikel jurnal internasional \parencite{nadzif2019sistem,
+haya2020rancang, anuradha2020microcontroller}. Uraikan dengan
+jelas kajian pustaka yang menimbulkan gagasan dan mendasari
+penelitian yang akan dilakukan, menguraikan teori, temuan, dan
+bahan penelitian lain yang dijadikan landasan, serta munculkan
+perbedaan Anda sebagai peneliti yang akan mengembangkan sebuah
+gagasan, metode, atau hasil yang dicapai. Uraian dalam penelitian
+sebelumnya diarahkan untuk menyusun kerangka atau konsep yang akan
+digunakan dalam penelitian.
+
+% ── Contoh tabel multi-halaman dengan "(Lanjutan)" ──
+% Jika tabel melebihi satu halaman, longtable otomatis meneruskan
+% ke halaman berikutnya dengan judul "Tabel X.Y. ... (Lanjutan)"
+% dan kepala tabel yang berulang (lihat \TabelLanjutan di
+% \endhead). Contoh tabel sengaja dibuat panjang agar menampilkan
+% halaman lanjutan.
+\begin{tabel}{@{}c l l l@{}}
+  \caption{Nilai mata kuliah}\label{tab:nilai}\\
+  \hline
+  No & NIM & Nama Mahasiswa & Nilai\\
+  \hline
+  \endfirsthead
+  \TabelLanjutan{4}{Nilai mata kuliah}\\
+  \hline
+  No & NIM & Nama Mahasiswa & Nilai\\
+  \hline
+  \endhead
+  \hline
+  \endfoot
+  \endlastfoot
+  1 & 11.11.0001 & Mahasiswa 1 & B\\
+  2 & 11.11.0002 & Mahasiswa 2 & B\\
+  3 & 11.11.0003 & Mahasiswa 3 & A\\
+  4 & 11.11.0004 & Mahasiswa 4 & B\\
+  5 & 11.11.0005 & Mahasiswa 5 & A\\
+  6 & 11.11.0006 & Mahasiswa 6 & C\\
+  7 & 11.11.0007 & Mahasiswa 7 & B\\
+  8 & 11.11.0008 & Mahasiswa 8 & A\\
+  9 & 11.11.0009 & Mahasiswa 9 & B\\
+  10 & 11.11.0010 & Mahasiswa 10 & A\\
+  11 & 11.11.0011 & Mahasiswa 11 & B\\
+  12 & 11.11.0012 & Mahasiswa 12 & C\\
+  13 & 11.11.0013 & Mahasiswa 13 & A\\
+  14 & 11.11.0014 & Mahasiswa 14 & B\\
+  15 & 11.11.0015 & Mahasiswa 15 & A\\
+  16 & 11.11.0016 & Mahasiswa 16 & B\\
+  17 & 11.11.0017 & Mahasiswa 17 & A\\
+  18 & 11.11.0018 & Mahasiswa 18 & B\\
+  19 & 11.11.0019 & Mahasiswa 19 & C\\
+  20 & 11.11.0020 & Mahasiswa 20 & A\\
+  21 & 11.11.0021 & Mahasiswa 21 & B\\
+  22 & 11.11.0022 & Mahasiswa 22 & A\\
+  23 & 11.11.0023 & Mahasiswa 23 & B\\
+  24 & 11.11.0024 & Mahasiswa 24 & A\\
+  25 & 11.11.0025 & Mahasiswa 25 & C\\
+  26 & 11.11.0026 & Mahasiswa 26 & B\\
+  27 & 11.11.0027 & Mahasiswa 27 & A\\
+  28 & 11.11.0028 & Mahasiswa 28 & B\\
+  29 & 11.11.0029 & Mahasiswa 29 & A\\
+  30 & 11.11.0030 & Mahasiswa 30 & B\\
+  31 & 11.11.0031 & Mahasiswa 31 & A\\
+  32 & 11.11.0032 & Mahasiswa 32 & C\\
+  33 & 11.11.0033 & Mahasiswa 33 & B\\
+  34 & 11.11.0034 & Mahasiswa 34 & A\\
+  35 & 11.11.0035 & Mahasiswa 35 & B\\
+  36 & 11.11.0036 & Mahasiswa 36 & A\\
+  37 & 11.11.0037 & Mahasiswa 37 & B\\
+  38 & 11.11.0038 & Mahasiswa 38 & A\\
+  39 & 11.11.0039 & Mahasiswa 39 & B\\
+  40 & 11.11.0040 & Mahasiswa 40 & C\\
+  41 & 11.11.0041 & Mahasiswa 41 & A\\
+  42 & 11.11.0042 & Mahasiswa 42 & B\\
+  43 & 11.11.0043 & Mahasiswa 43 & A\\
+  44 & 11.11.0044 & Mahasiswa 44 & B\\
+  45 & 11.11.0045 & Mahasiswa 45 & A\\
+\end{tabel}
+
+% ── Contoh tabel penelitian sebelumnya (minimal 3 artikel:
+%    2 jurnal nasional, 1 jurnal internasional) ──
+% Catatan: tabel ini boleh dibuat landscape/portrait sesuai
+% kebijakan fakultas/prodi masing-masing.
+\begin{tabel}{@{}c p{2.6cm} p{2.6cm} p{2.6cm} p{2.4cm} p{2.2cm}@{}}
+  \caption{Penelitian sebelumnya}\label{tab:penelitian-sebelumnya}\\
+  \hline
+  No & Peneliti & Judul & Hasil Penelitian & Persamaan & Perbedaan\\
+  \hline
+  \endfirsthead
+  \TabelLanjutan{6}{Penelitian sebelumnya}\\
+  \hline
+  No & Peneliti & Judul & Hasil Penelitian & Persamaan & Perbedaan\\
+  \hline
+  \endhead
+  \hline
+  \endfoot
+  \endlastfoot
+  1 & Ahmad Rudiansyah, Mardiono, dan Reza Diharja (2020) &
+      Desain Alat Monitoring Kapasitas Tabung Gas LPG 3 Kilogram
+      Menggunakan Load Cell Dilengkapi Dengan Deteksi Kebocoran
+      Gas Berbasis Internet of Things &
+      Monitoring level gas dan deteksi kebocoran gas berbasis
+      Internet of Things digunakan untuk memonitoring isi gas
+      LPG 3 kg dan kebocoran gas untuk memudahkan pembeli
+      memantau level dan memberi peringatan ketika terjadi
+      kebocoran gas. &
+      Pembuatan alat monitoring level gas dan deteksi kebocoran
+      gas berbasis Internet of Things &
+      Menggunakan wemos D1 mini sebagai mikrokontroler;\\
+  2 & Anisha Fadia Haya, Werman Kasoep, Nefy Puteri Novani (2020) &
+      Rancang Bangun Smart Case Sistem Monitoring Tabung Gas
+      Elpiji Berbasis Mikrokontroler &
+      Mengirim data notifikasi menggunakan GSM ketika terjadi
+      kebocoran gas dan memantau informasi isi dengan LCD. &
+      Menggunakan load cell sensor sebagai sensor utama yang
+      mendeteksi untuk monitoring level gas &
+      Mikrokontroler yang digunakan adalah arduino Uno R3;\\
+  3 & P. Anuradha, Rajeshwar Rao Arabelli, K. Rajkumar, dan
+      J. Ravichander (2020) &
+      Microcontroller Based Monitoring and Controlling of LPG
+      Leaks Using Internet of Things &
+      Pembuatan perangkat yang dapat mendeteksi gas menggunakan
+      Arduino Uno ATmega328 dan memantau tingkat kebocoran gas
+      melalui ThingSpeak. &
+      Sistem untuk mendeteksi kebocoran gas menggunakan
+      mikrokontroler &
+      Studi ini menggunakan Arduino Uno.\\
+\end{tabel}

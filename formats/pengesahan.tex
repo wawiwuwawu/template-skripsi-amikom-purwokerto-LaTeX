@@ -1,0 +1,69 @@
+%============================================================
+% HALAMAN PENGESAHAN DEWAN PENGUJI
+%   Isi: tanggal ujian, tabel daftar penguji (beserta NIDN),
+%   pernyataan pengesahan gelar S.Kom., dan tanda tangan Dekan.
+%   Penguji 3 / Pendamping diatur di config/toggles.tex.
+%============================================================
+\chapter*{PENGESAHAN}
+\HalamanAwal{HALAMAN PENGESAHAN}
+
+\begin{center}
+  {\bfseries Skripsi\par}
+  \vspace{0.4em}
+  {\bfseries\MakeUppercase{\JudulSkripsi}\par}
+  \JudulStudiKasus
+
+  \vspace{1.2em}
+  Yang dipersiapkan dan disusun oleh
+
+  \vspace{0.3em}
+  {\bfseries \NamaMahasiswa\par}
+  {\bfseries NIM. \NIM\par}
+\end{center}
+
+\vspace{0.4em}
+Telah dipertahankan di depan dewan penguji\\
+Pada tanggal \TanggalUjian
+
+% ── Tabel daftar penguji (spasi 1) ──
+\begin{spacing}{1.0}
+\ifpengujitiga
+  \noindent
+  \begin{tabular}{@{}>{\centering\arraybackslash}m{4.4cm}
+                     >{\centering\arraybackslash}m{4.4cm}
+                     >{\centering\arraybackslash}m{4.4cm}@{}}
+    \begin{minipage}[t]{4.4cm}\centering Penguji 1,\par\vspace{2cm}\par\textbf{\NamaPengujiSatu}\par NIDN. \NIDNPengujiSatu\end{minipage} &
+    \begin{minipage}[t]{4.4cm}\centering Penguji 2,\par\vspace{2cm}\par\textbf{\NamaPengujiDua}\par NIDN. \NIDNPengujiDua\end{minipage} &
+    \begin{minipage}[t]{4.4cm}\centering Penguji 3 / Pendamping,\par\vspace{2cm}\par\textbf{\NamaPengujiTiga}\par NIDN. \NIDNPengujiTiga\end{minipage}
+  \end{tabular}
+\else
+  \noindent
+  \begin{tabular}{@{}>{\centering\arraybackslash}m{6.5cm}
+                     >{\centering\arraybackslash}m{6.5cm}@{}}
+    \begin{minipage}[t]{6.5cm}\centering Penguji 1,\par\vspace{2cm}\par\textbf{\NamaPengujiSatu}\par NIDN. \NIDNPengujiSatu\end{minipage} &
+    \begin{minipage}[t]{6.5cm}\centering Penguji 2,\par\vspace{2cm}\par\textbf{\NamaPengujiDua}\par NIDN. \NIDNPengujiDua\end{minipage}
+  \end{tabular}
+\fi
+
+\vspace{1.2em}
+% ── Pernyataan pengesahan (spasi 1) ──
+\begin{center}
+  Skripsi ini telah disahkan sebagai salah satu persyaratan\\
+  untuk memperoleh gelar \GelarSkripsi\\
+  Tanggal \TanggalUjian
+\end{center}
+
+\vspace{0.8em}
+% ── Mengetahui Dekan ──
+\noindent
+\begin{minipage}[t]{0.6\linewidth}
+  Mengetahui,\\
+  \NamaFakultas\\
+  Dekan
+  \vspace{2.2cm}\\
+  \textbf{\NamaDekan}\\
+  NIK. \NIKDekan
+\end{minipage}
+\end{spacing}
+
+\clearpage

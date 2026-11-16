@@ -1,0 +1,86 @@
+%============================================================
+% HALAMAN PERSETUJUAN DOSEN PEMBIMBING
+%   Mendukung 2 Pembimbing atau Pembimbing Tunggal
+%   (atur di config/toggles.tex: \duapembimbingtrue / \duapembimbingfalse)
+%   Isi: judul, mahasiswa, tanggal ACC terakhir, blok tanda tangan
+%   pembimbing (gelar terbaru + NIDN penuh), pernyataan "telah
+%   diterima", serta mengetahui Dekan dan Kaprodi.
+%============================================================
+\chapter*{PERSETUJUAN}
+\HalamanAwal{HALAMAN PERSETUJUAN}
+
+\begin{center}
+  {\bfseries Skripsi\par}
+  \vspace{0.4em}
+  {\bfseries\MakeUppercase{\JudulSkripsi}\par}
+  \JudulStudiKasus
+
+  \vspace{1.2em}
+  Yang dipersiapkan dan disusun oleh
+
+  \vspace{0.3em}
+  {\bfseries \NamaMahasiswa\par}
+  {\bfseries NIM. \NIM\par}
+\end{center}
+
+\vspace{0.4em}
+telah disetujui oleh dosen pembimbing Skripsi\\
+Pada tanggal \TanggalACC
+
+% ── Blok tanda tangan dosen pembimbing (spasi 1) ──
+\begin{spacing}{1.0}
+\ifduapembimbing
+  \noindent
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    Dosen Pembimbing 1,\\
+    \vspace{2.2cm}
+    \textbf{\NamaPembimbingSatu}\\
+    NIDN. \NIDNPembimbingSatu
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.48\linewidth}
+    \centering
+    Dosen Pembimbing 2,\\
+    \vspace{2.2cm}
+    \textbf{\NamaPembimbingDua}\\
+    NIDN. \NIDNPembimbingDua
+  \end{minipage}
+\else
+  \begin{center}
+    Dosen Pembimbing 1,\\
+    \vspace{2.2cm}
+    \textbf{\NamaPembimbingSatu}\\
+    NIDN. \NIDNPembimbingSatu
+  \end{center}
+\fi
+
+\vspace{1em}
+% ── Pernyataan telah diterima (spasi 1) ──
+\begin{center}
+  Skripsi ini telah diterima sebagai salah satu persyaratan\\
+  untuk memperoleh gelar \GelarSkripsi\\
+  Tanggal \TanggalUjian
+\end{center}
+
+\vspace{1em}
+% ── Mengetahui: Dekan & Kaprodi ──
+\noindent
+\begin{minipage}[t]{0.48\linewidth}
+  Mengetahui,\\
+  \NamaFakultas\\
+  Dekan,
+  \vspace{2.2cm}\\
+  \textbf{\NamaDekan}\\
+  NIK. \NIKDekan
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.48\linewidth}
+  Kaprodi \NamaProdi
+  \vspace{2.2cm}\\
+  \textbf{\NamaKaprodi}\\
+  NIK. \NIKKaprodi
+\end{minipage}
+\end{spacing}
+
+\clearpage

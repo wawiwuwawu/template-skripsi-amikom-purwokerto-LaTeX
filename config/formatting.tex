@@ -1,0 +1,279 @@
+%============================================================
+% FORMAT FORMAT AKHIR — Universitas Amikom Purwokerto
+% Semua aturan format naskah dikumpulkan di sini:
+%   - paragraf & spasi
+%   - format BAB / sub-bab (A., B., ...)
+%   - daftar isi / tabel / gambar / lampiran
+%   - nomor halaman
+%   - caption tabel & gambar
+%   - gaya Daftar Pustaka Amikom (biblatex)
+%   - makro-makro bantu template
+%============================================================
+
+% ── Paragraf ─────────────────────────────────────────────────
+\setlength{\parindent}{1.27cm}    % perataan awal paragraf (standar Word 0.5")
+\setlength{\parskip}{0pt}         % tanpa jarak antar-paragraf
+\clubpenalty=10000                % cegah baris yatim/piatu
+\widowpenalty=10000
+
+% Spasi utama naskah (Bab I–V, termasuk judul bab): spasi 2.
+% Halaman-halaman awal mengatur spasinya sendiri di file masing-masing.
+\doublespacing
+
+% ── Penomoran ────────────────────────────────────────────────
+% Bab di daftar isi & judul pakai angka Romawi: BAB I, BAB II, ...
+% Tabel/gambar/rumus tetap arab: Tabel 2.1, Gambar 2.1, Persamaan (2.1).
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\theequation}{\arabic{chapter}.\arabic{equation}}
+% Sub-bab pakai huruf: A., B., C. (bukan 1.1, 1.2) — sesuai template asli.
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thesubsection}{\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\alph{subsubsection}}
+
+% ── Format judul bab ─────────────────────────────────────────
+% Dua baris terpusat bold:
+%       BAB I
+%       PENDAHULUAN
+% Spasi 2 tetap berlaku di judul bab (termasuk judul bab).
+\titleformat{\chapter}[display]
+  {\centering\normalsize\bfseries}
+  {BAB \thechapter}
+  {0.6em}
+  {\MakeUppercase}
+% Sebelum/sesudah judul bab dikontrol ketat agar tidak ada jarak berlebih.
+\titlespacing*{\chapter}{0pt}{-1.2em}{0.6em}
+
+% Sub-bab:  A. Latar Belakang Masalah   (bold, rata kiri)
+\titleformat{\section}
+  {\normalsize\bfseries}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{0.4em}{0.2em}
+
+% Sub-sub-bab:  1. Judul   (bold, rata kiri)
+\titleformat{\subsection}
+  {\normalsize\bfseries}{\thesubsection.}{0.5em}{}
+\titlespacing*{\subsection}{0pt}{0.4em}{0.2em}
+
+% Tingkat keempat:  a. Judul   (bold, rata kiri)
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}{\thesubsubsection.}{0.5em}{}
+\titlespacing*{\subsubsection}{0pt}{0.4em}{0.2em}
+
+% ── Daftar isi / tabel / gambar (tocloft) ────────────────────
+% Hanya BAB dan sub-bab yang masuk daftar isi (level 2), dan
+% keduanya dicetak tebal. Teks daftar: Times New Roman 12,
+% spasi 1,5, tidak di-bold (kecuali bab & sub-bab).
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{3}       % sub-sub-bab bernomor di naskah
+
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftchappagefont}{\bfseries}
+\renewcommand{\cftchappresnum}{BAB }
+\renewcommand{\cftchapaftersnum}{\hspace{0.4em}}
+\setlength{\cftchapnumwidth}{3.2em}        % cukup untuk "BAB IV"
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsecfont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\bfseries}
+\renewcommand{\cftsecaftersnum}{.}
+\setlength{\cftsecnumwidth}{1.8em}         % lebar "A."
+\setlength{\cftsecindent}{1.5em}
+\setlength{\cftbeforechapskip}{0.6em}
+
+% Entri DAFTAR TABEL / DAFTAR GAMBAR memakai prefix seperti
+% caption-nya: "Tabel 2.1. Data mahasiswa" / "Gambar 2.1. Logo lama".
+\renewcommand{\cfttabpresnum}{Tabel~}
+\renewcommand{\cfttabaftersnum}{.}
+\setlength{\cfttabnumwidth}{4.6em}
+\renewcommand{\cftfigpresnum}{Gambar~}
+\renewcommand{\cftfigaftersnum}{.}
+\setlength{\cftfignumwidth}{4.6em}
+
+% ── Caption tabel & gambar ───────────────────────────────────
+% Tabel  : caption DI ATAS tabel, format "Tabel X.Y. Judul".
+% Gambar : caption DI BAWAH gambar, format "Gambar X.Y. Judul".
+\captionsetup{%
+  labelsep=period,
+  font={normalsize,stretch=1},
+  justification=centering,
+  singlelinecheck=true}
+\captionsetup[table]{position=above,skip=6pt}
+\captionsetup[figure]{position=below,skip=6pt}
+
+% ── Nomor halaman ────────────────────────────────────────────
+% Awal halaman bab & halaman bagian awal : bawah tengah (plain)
+% Halaman lanjutan                        : kanan atas  (utama)
+% DAFTAR PUSTAKA & LAMPIRAN               : tanpa nomor halaman
+\setlength{\headheight}{14.5pt}       % cukup untuk fancyhdr
+\fancypagestyle{plain}{%
+  \fancyhf{}%
+  \fancyfoot[C]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+\fancypagestyle{utama}{%
+  \fancyhf{}%
+  \fancyhead[R]{\thepage}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+
+% ── Nama daftar ──────────────────────────────────────────────
+% babel-indonesian menimpa nama-nama ini saat \begin{document},
+% jadi perubahan dibungkus \AtBeginDocument.
+\AtBeginDocument{%
+  \renewcommand{\contentsname}{DAFTAR ISI}%
+  \renewcommand{\listtablename}{DAFTAR TABEL}%
+  \renewcommand{\listfigurename}{DAFTAR GAMBAR}%
+}
+
+%============================================================
+% MAKRO-MAKRO BANTU TEMPLATE
+%============================================================
+
+% \TeksTersembunyi{teks} — teks putih (tak terlihat di PDF).
+% Template asli menaruh tulisan "HALAMAN SAMPUL", "HALAMAN JUDUL",
+% dst. berwarna putih agar dapat terbaca oleh generator daftar isi.
+\newcommand{\TeksTersembunyi}[1]{\textcolor{white}{#1}}
+
+% \HalamanAwal{NAMA HALAMAN} — teks putih tersembunyi + masuk
+% DAFTAR ISI (tanpa nomor bab, dengan nomor halaman romawi).
+\makeatletter
+\newcommand{\HalamanAwal}[1]{%
+  \par\noindent\TeksTersembunyi{#1}\par
+  \addcontentsline{toc}{halamanawal}{#1}%
+}
+% Entri daftar isi untuk halaman awal: normal (tidak tebal), ada titik-titik
+% dan nomor halaman romawi.
+\newcommand{\l@halamanawal}{\@dottedtocline{1}{0pt}{0pt}}
+
+% \TocHalaman{NAMA} — entri DAFTAR ISI untuk halaman yang sudah
+% punya judul terlihat (KATA PENGANTAR, DAFTAR ISI, DAFTAR TABEL,
+% ABSTRAK, dan sebagainya). Tanpa teks putih tambahan.
+\newcommand{\TocHalaman}[1]{\addcontentsline{toc}{halamanawal}{#1}}
+
+% \BagianAkhir{NAMA BAGIAN} — entri DAFTAR PUSTAKA / LAMPIRAN:
+% tebal, TANPA titik-titik dan TANPA nomor halaman (sesuai template asli).
+\newcommand{\BagianAkhir}[1]{%
+  \addtocontents{toc}{\protect\contentsline{bagianakhir}{\protect#1}{}{}}%
+}
+\newcommand{\l@bagianakhir}[2]{%
+  \vskip 0.6em
+  \noindent\textbf{#1}\par
+}
+\makeatother
+
+% \Istilah{istilah}{penjelasan} — entri DAFTAR ISTILAH.
+\newcommand{\Istilah}[2]{%
+  \noindent\textbf{#1} : #2\par
+}
+
+% \Lampiran{Judul} — mulai lampiran baru: "Lampiran N. Judul"
+% (bold), otomatis masuk DAFTAR LAMPIRAN.
+\newcounter{lampiran}
+\newcommand{\LampiranList}[1]{\noindent #1\par\vspace{0.4em}}
+\makeatletter
+\newcommand{\Lampiran}[1]{%
+  \clearpage
+  \stepcounter{lampiran}%
+  \noindent\textbf{Lampiran \arabic{lampiran}. #1}\par\vspace{0.5em}
+  \addtocontents{lampl}{\protect\LampiranList{Lampiran \arabic{lampiran}. #1}}%
+}
+% \listoflampiran — halaman DAFTAR LAMPIRAN (tanpa titik-titik
+% dan tanpa nomor halaman pada entri-entrinya).
+\newcommand{\listoflampiran}{%
+  \chapter*{DAFTAR LAMPIRAN}%
+  \TocHalaman{DAFTAR LAMPIRAN}%
+  \@starttoc{lampl}%
+}
+\makeatother
+
+% \KotakMaterai — kotak pengganti materai Rp10.000 pada Surat
+% Pernyataan Keaslian Penelitian (diganti materai asli saat
+% dicetak dan ditandatangani).
+\newcommand{\KotakMaterai}{%
+  \fbox{\parbox[c][2.8cm][c]{4.5cm}{\centering Bermaterai\\ Rp10.000}}%
+}
+
+% \KotakScan — kotak penanda tempat memasukkan hasil scan pada
+% lampiran (kartu bimbingan, surat keterangan, dll.).
+\newcommand{\KotakScan}[1]{%
+  \noindent\fbox{\parbox[c][8cm][c]{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{%
+    \centering #1}}%
+}
+
+% ── Lingkungan tabel (longtable) ─────────────────────────────
+% \begin{tabel}{spesifikasi-kolom} ... \end{tabel}
+% Isi tabel otomatis: Times New Roman 10, spasi 1, justify.
+% Lihat contoh pemakaian lengkap (dengan tabel lanjutan) di
+% chapters/bab2.tex.
+\newenvironment{tabel}[1]{%
+  \begingroup
+  \FontTabel
+  \setstretch{1.0}
+  \setlength{\LTpre}{6pt}%
+  \setlength{\LTpost}{6pt}%
+  \begin{longtable}{#1}%
+}{%
+  \end{longtable}%
+  \endgroup
+}
+
+% \TabelLanjutan{jumlah-kolom}{Judul Tabel} — kepala halaman
+% lanjutan tabel: "Tabel X.Y. Judul Tabel (Lanjutan)" + kepala tabel.
+% Pemakaian di dalam \endhead (lihat contoh chapters/bab2.tex).
+\newcommand{\TabelLanjutan}[2]{%
+  \multicolumn{#1}{c}{Tabel \thetable. #2 (Lanjutan)}\\
+}
+
+%============================================================
+% DAFTAR PUSTAKA — GAYA AMIKOM (biblatex)
+%============================================================
+% Judul ditulis apa adanya (Title Case dari file .bib, tidak
+% dirubah jadi sentence case oleh biblatex).
+\DeclareFieldFormat{titlecase}{#1}
+
+% Pengarang terakhir dihubungkan "dan" (bukan "&"):
+%   Wibowo, A. R., dan Saputra, I. A.
+\DeclareDelimFormat[bib,biblist]{finalnamedelim}{\addcomma\space dan}
+
+% Kata-kata lokal ("dan", "dkk.", "Diambil dari", dsb.) disediakan
+% oleh indonesian.lbx — file lokalisasi biblatex milik repo,
+% karena biblatex belum menyediakan indonesian.lbx.
+% Judul artikel/tesis tanpa tanda kutip (gaya Amikom: judul polos,
+% yang italic hanya nama jurnal/judul buku).
+\DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{#1\isdot}
+% Volume(nomor) halaman tanpa awalan "pp." : "Jurnal Teknik Elektro, 11(1), 26-30"
+\DeclareFieldFormat{pages}{#1}
+\renewbibmacro*{journal+issuetitle}{%
+  \usebibmacro{journal}%
+  \setunit*{\addspace}%
+  \printfield[journaltitle]{series}%
+  \setunit{\addcomma\space}%
+  \printfield[nq]{issue}%
+  \setunit{\addcomma\space}%
+  \usebibmacro{volume+number+eid}%
+  \setunit{\addcomma\space}%
+  \usebibmacro{issue+date}%
+  \setunit{\addcolon\space}%
+  \usebibmacro{issue}%
+  \newunit}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \iffieldundef{number}{}{\mkbibparens{\printfield{number}}}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}%
+}
+% Jenis skripsi: "Skripsi." (bukan "Master's thesis.")
+\DeclareFieldFormat[thesis]{type}{#1\adddot}
+
+% Hilangkan awalan "in:" pada prosiding (gaya Amikom tidak memakainya)
+\renewbibmacro{in:}{}
+
+% Jarak penulisan: dalam referensi spasi 1, antar referensi 2 spasi.
+\renewcommand{\bibfont}{\setstretch{1.0}}
+\setlength{\bibitemsep}{2\baselineskip}
+\setlength{\bibhang}{1.27cm}

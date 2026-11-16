@@ -1,0 +1,47 @@
+%============================================================
+% HALAMAN SAMPUL DEPAN (COVER)
+%   - Judul: uppercase bold, piramida terbalik (atur dengan \\)
+%   - Teks putih "HALAMAN SAMPUL" di antara judul dan "Skripsi"
+%   - Logo: tinggi 4 cm, lebar 5,5 cm, terpusat
+%   - Identitas: nama 12pt bold, NIM, prodi, fakultas, kampus, tahun
+% Halaman ini dihitung halaman i (romawi) tetapi nomornya tidak
+% ditampilkan.
+%============================================================
+\thispagestyle{empty}
+\onehalfspacing
+
+\begin{center}
+  % ── Judul skripsi (piramida terbalik) ──
+  \vspace*{1em}
+  {\bfseries\MakeUppercase{\JudulSkripsi}\par}
+  \JudulStudiKasus
+
+  % ── Teks tersembunyi putih: "HALAMAN SAMPUL" ──
+  \HalamanAwal{HALAMAN SAMPUL}
+
+  \vspace{0.4em}
+  {\bfseries Skripsi\par}
+
+  % ── Logo kampus: tinggi 4 cm, lebar maksimal 5,5 cm ──
+  \vfill
+  \includegraphics[height=4cm,width=5.5cm,keepaspectratio]{assets/amikom/logo_amikom.png}
+
+  % ── Identitas mahasiswa ──
+  \vfill
+  Disusun oleh
+
+  \vspace{0.3em}
+  {\bfseries \NamaMahasiswa\par}
+  {\bfseries \NIM\par}
+
+  % ── Program studi, fakultas, universitas, kota, tahun ujian ──
+  \vfill
+  {\bfseries PROGRAM STUDI \MakeUppercase{\NamaProdi}\par}
+  {\bfseries \MakeUppercase{\NamaFakultas}\par}
+  {\bfseries UNIVERSITAS AMIKOM PURWOKERTO\par}
+  {\bfseries PURWOKERTO\par}
+  \vspace{0.4em}
+  {\bfseries \TahunUjian\par}
+\end{center}
+
+\clearpage

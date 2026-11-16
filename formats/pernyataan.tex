@@ -1,0 +1,74 @@
+%============================================================
+% SURAT PERNYATAAN KEASLIAN PENELITIAN
+%   Isi: identitas mahasiswa, pernyataan keaslian, kotak materai
+%   Rp10.000, tempat/tanggal, tanda tangan mahasiswa, dan NIM.
+%   Kotak "Bermaterai" dicetak sebagai placeholder; materai
+%   asli ditempel setelah naskah dicetak.
+%   Catatan implementasi: isi baris tabular tidak boleh memuat
+%   `\\` (memutus baris tabular) dan lingkungan spacing tidak
+%   boleh membungkus tabular (menyebabkan baris tumpang tindih).
+%============================================================
+\chapter*{SURAT PERNYATAAN KEASLIAN PENELITIAN}
+\HalamanAwal{HALAMAN PERNYATAAN KEASLIAN}
+
+\begin{spacing}{1.5}
+Yang bertanda tangan dibawah ini :
+\end{spacing}
+
+% ── Identitas mahasiswa (baris tabular otomatis rapat/spasi 1) ──
+\noindent\begin{tabular}{@{}p{4.2cm}@{:\ }l@{}}
+  Nama Mahasiswa   & \NamaMahasiswa\\
+  NIM              & \NIM\\
+  Program Studi    & \NamaProdi\\
+  Fakultas         & \NamaFakultas\\
+  Perguruan Tinggi & Universitas Amikom Purwokerto\\
+\end{tabular}
+
+\begin{spacing}{1.5}
+Menyatakan bahwa Skripsi Sebagai Berikut:
+\end{spacing}
+
+% ── Judul & pembimbing ──
+\noindent
+\parbox[t]{4.2cm}{Judul Skripsi}\ :\ \parbox[t]{9.2cm}{\JudulSkripsi}
+
+\medskip
+\noindent\begin{tabular}{@{}p{4.2cm}@{:\ }l@{}}
+  Dosen Pembimbing 1 & \NamaPembimbingSatu\\
+  \ifduapembimbing
+  Dosen Pembimbing 2 & \NamaPembimbingDua\\
+  \else
+  Dosen Pembimbing 2 & -\\
+  \fi
+\end{tabular}
+
+\begin{spacing}{1.5}
+\medskip
+Adalah benar-benar \textbf{ASLI} dan \textbf{BELUM PERNAH} dibuat orang lain, kecuali yang diacu dalam daftar pustaka pada Skripsi ini.
+
+Demikian pernyataan ini saya buat, apabila ini di kemudian hari terbukti bahwa saya melakukan penjiplakan karya orang lain, maka saya bersedia menerima \textbf{SANKSI AKADEMIK}.
+\end{spacing}
+
+% ── Tanda tangan ──
+\begin{spacing}{1.0}
+\vspace{1.2em}
+\noindent
+\begin{minipage}[t]{0.42\linewidth}
+  \KotaPernyataan
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.52\linewidth}
+  \hfill
+  \begin{minipage}[t]{0.62\linewidth}
+    \centering
+    \KotakMaterai\\
+    \vspace{0.4em}
+    Yang menyatakan,\\
+    \vspace{2.2cm}
+    \textbf{\NamaMahasiswa}\\
+    NIM. \NIM
+  \end{minipage}
+\end{minipage}
+\end{spacing}
+
+\clearpage

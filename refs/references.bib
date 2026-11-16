@@ -1,0 +1,95 @@
+%============================================================
+% DAFTAR PUSTAKA — file BibTeX (biblatex + biber)
+%============================================================
+% Aturan gaya Amikom (format akhir dikonfigurasi di
+% config/formatting.tex; kualitas input dijaga di sini):
+%   - Nama belakang ditulis di depan, diikuti inisial
+%     (otomatis: gunakan format {Belakang, Nama Depan}).
+%   - Pengarang lebih dari satu dihubungkan "dan" (bukan &),
+%     pengarang 3+ otomatis menjadi "dkk." (bukan et al.).
+%   - Tanpa gelar kesarjanaan pada nama pengarang.
+%   - Judul ditulis kapital di awal setiap kata (Title Case);
+%     yang harus italic (judul buku, nama jurnal, dsb.) otomatis.
+%   - Buku: tanpa kata "PT"/"CV" pada penerbit.
+%   - Modul/bahan ajar dan blogspot DILARANG keras.
+% Contoh format akhir:
+%   Nadzif, H., Andrasto, T., dan Aprilian, S. (2019). Sistem
+%   Monitoring Kelembaban Tanah dan Kendali Pompa Air Menggunakan
+%   Arduino dan Internet. Jurnal Teknik Elektro, 11(1), 26-30.
+%============================================================
+
+% ── JURNAL ───────────────────────────────────────────────────
+% Format: Nama. (Tahun). Judul. Nama jurnal (italic), volume(nomor), halaman.
+% Catatan: yang italic hanya nama jurnal; link jurnal dihapus.
+@article{nadzif2019sistem,
+  author       = {Nadzif, H. and Andrasto, T. and Aprilian, S.},
+  year         = {2019},
+  title        = {Sistem Monitoring Kelembaban Tanah dan Kendali Pompa Air Menggunakan {Arduino} dan {Internet}},
+  journaltitle = {Jurnal Teknik Elektro},
+  volume       = {11},
+  number       = {1},
+  pages        = {26--30},
+}
+
+@article{haya2020rancang,
+  author       = {Haya, Anisha Fadia and Kasoep, Werman and Novani, Nefy Puteri},
+  year         = {2020},
+  title        = {Rancang Bangun Smart Case Sistem Monitoring Tabung Gas Elpiji Berbasis Mikrokontroler},
+  journaltitle = {Jurnal Teknologi Informasi},
+  volume       = {4},
+  number       = {1},
+  pages        = {10--18},
+}
+
+@article{anuradha2020microcontroller,
+  author       = {Anuradha, P. and Arabelli, Rajeshwar Rao and Rajkumar, K. and Ravichander, J.},
+  year         = {2020},
+  title        = {Microcontroller Based Monitoring and Controlling of {LPG} Leaks Using {Internet of Things}},
+  journaltitle = {International Journal of Engineering Science and Information Technology},
+  volume       = {3},
+  number       = {2},
+  pages        = {45--52},
+}
+
+% ── BUKU ─────────────────────────────────────────────────────
+% Format: Nama. (Tahun). Judul buku (italic). Kota terbit: Penerbit.
+% Catatan: jika ada PT/CV pada penerbit, tidak usah ditulis.
+@book{winowatan2009,
+  author    = {Winowatan},
+  year      = {2009},
+  title     = {Pedoman Lengkap Pemrograman {ORACLE Developer 6i}},
+  location  = {Jakarta},
+  publisher = {Elex Media Komputindo},
+}
+
+% ── SKRIPSI / TA / TESIS / DISERTASI ─────────────────────────
+% Format: Nama. (Tahun). Judul (italic). Skripsi. Kota terbit: Nama Kampus.
+% Catatan: pengarangnya pasti satu; ganti type menyesuaikan jenis.
+@thesis{nadia2019tantangan,
+  author      = {Nadia, A. N.},
+  year        = {2019},
+  title       = {Tantangan Globalisasi di Indonesia},
+  type        = {Skripsi},
+  institution = {Universitas Amikom Purwokerto},
+  location    = {Purwokerto},
+}
+
+% ── INTERNET / WEB ───────────────────────────────────────────
+% Format: Pengarang. (Tahun). Judul (italic). Diambil dari link, diakses pada tanggal.
+% Catatan: jika tidak ada nama pengarang, tulis nama website saja.
+@online{albarda2004strategi,
+  author = {Albarda},
+  year   = {2004},
+  title  = {Strategi Implementasi {TI} Untuk Tata Kelola Organisasi},
+  note   = {Diambil dari \url{https://www.example.com/docman/doc-view}, diakses pada 3 Agustus 2008},
+}
+
+% ── SEMINAR / PROSIDING / CONFERENCE / SYMPOSIUM ─────────────
+% Format: Nama. (Tahun). Judul. Nama seminar (italic). Dipresentasikan di tempat, pada kapan.
+@inproceedings{wibisono2013menentukan,
+  author    = {Wibisono, S. C.},
+  year      = {2013},
+  title     = {Menentukan Manfaat Arkeologis Melalui Pemahaman Nilai Penting Hasil Penelitian},
+  booktitle = {Prosiding Seminar Nasional Dalam Rangka 100 Tahun Purbakala},
+  note      = {Dipresentasikan di Balai Arkeologi Bandung, pada tanggal 26--28 Agustus 2013},
+}

@@ -1,0 +1,49 @@
+%============================================================
+% HALAMAN JUDUL DALAM
+%   Sama seperti sampul depan, ditambah:
+%   - teks putih "HALAMAN JUDUL"
+%   - kalimat persyaratan derajat (spasi 1)
+%============================================================
+\onehalfspacing
+
+\begin{center}
+  % ── Judul skripsi (piramida terbalik) ──
+  \vspace*{1em}
+  {\bfseries\MakeUppercase{\JudulSkripsi}\par}
+  \JudulStudiKasus
+
+  % ── Teks tersembunyi putih: "HALAMAN JUDUL" ──
+  \HalamanAwal{HALAMAN JUDUL}
+
+  \vspace{0.4em}
+  {\bfseries Skripsi\par}
+
+  % ── Kalimat persyaratan (spasi 1) ──
+  \begin{spacing}{1.0}
+    Untuk memenuhi sebagian persyaratan mencapai derajat Sarjana S1\\
+    pada Program Studi \NamaProdi\ \NamaFakultas
+  \end{spacing}
+
+  % ── Logo kampus: tinggi 4 cm, lebar maksimal 5,5 cm ──
+  \vfill
+  \includegraphics[height=4cm,width=5.5cm,keepaspectratio]{assets/amikom/logo_amikom.png}
+
+  % ── Identitas mahasiswa ──
+  \vfill
+  Disusun oleh
+
+  \vspace{0.3em}
+  {\bfseries \NamaMahasiswa\par}
+  {\bfseries \NIM\par}
+
+  % ── Program studi, fakultas, universitas, kota, tahun ujian ──
+  \vfill
+  {\bfseries PROGRAM STUDI \MakeUppercase{\NamaProdi}\par}
+  {\bfseries \MakeUppercase{\NamaFakultas}\par}
+  {\bfseries UNIVERSITAS AMIKOM PURWOKERTO\par}
+  {\bfseries PURWOKERTO\par}
+  \vspace{0.4em}
+  {\bfseries \TahunUjian\par}
+\end{center}
+
+\clearpage
