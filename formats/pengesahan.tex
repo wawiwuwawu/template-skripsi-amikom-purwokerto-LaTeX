@@ -3,6 +3,8 @@
 %   Isi: tanggal ujian, tabel daftar penguji (beserta NIDN),
 %   pernyataan pengesahan gelar S.Kom., dan tanda tangan Dekan.
 %   Penguji 3 / Pendamping diatur di config/toggles.tex.
+%   Blok penguji memakai tabular agar nama/NIDN antar kolom
+%   sejajar pada baseline yang sama.
 %============================================================
 \chapter*{PENGESAHAN}
 \HalamanAwal{HALAMAN PENGESAHAN}
@@ -21,27 +23,29 @@
   {\bfseries NIM. \NIM\par}
 \end{center}
 
-\vspace{0.4em}
-Telah dipertahankan di depan dewan penguji\\
+\vspace{1em}
+\noindent Telah dipertahankan di depan dewan penguji\\
 Pada tanggal \TanggalUjian
 
 % ── Tabel daftar penguji (spasi 1) ──
 \begin{spacing}{1.0}
+\vspace{1.6em}
 \ifpengujitiga
-  \noindent
-  \begin{tabular}{@{}>{\centering\arraybackslash}m{4.4cm}
-                     >{\centering\arraybackslash}m{4.4cm}
-                     >{\centering\arraybackslash}m{4.4cm}@{}}
-    \begin{minipage}[t]{4.4cm}\centering Penguji 1,\par\vspace{2cm}\par\textbf{\NamaPengujiSatu}\par NIDN. \NIDNPengujiSatu\end{minipage} &
-    \begin{minipage}[t]{4.4cm}\centering Penguji 2,\par\vspace{2cm}\par\textbf{\NamaPengujiDua}\par NIDN. \NIDNPengujiDua\end{minipage} &
-    \begin{minipage}[t]{4.4cm}\centering Penguji 3 / Pendamping,\par\vspace{2cm}\par\textbf{\NamaPengujiTiga}\par NIDN. \NIDNPengujiTiga\end{minipage}
+  \noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{4.4cm}
+                              >{\centering\arraybackslash}p{4.4cm}
+                              >{\centering\arraybackslash}p{4.4cm}@{}}
+    Penguji 1, & Penguji 2, & Penguji 3 / Pendamping,\\[2.0cm]
+    \textbf{\NamaPengujiSatu} & \textbf{\NamaPengujiDua} &
+    \textbf{\NamaPengujiTiga}\\
+    NIDN. \NIDNPengujiSatu & NIDN. \NIDNPengujiDua &
+    NIDN. \NIDNPengujiTiga\\
   \end{tabular}
 \else
-  \noindent
-  \begin{tabular}{@{}>{\centering\arraybackslash}m{6.5cm}
-                     >{\centering\arraybackslash}m{6.5cm}@{}}
-    \begin{minipage}[t]{6.5cm}\centering Penguji 1,\par\vspace{2cm}\par\textbf{\NamaPengujiSatu}\par NIDN. \NIDNPengujiSatu\end{minipage} &
-    \begin{minipage}[t]{6.5cm}\centering Penguji 2,\par\vspace{2cm}\par\textbf{\NamaPengujiDua}\par NIDN. \NIDNPengujiDua\end{minipage}
+  \noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{6.5cm}
+                              >{\centering\arraybackslash}p{6.5cm}@{}}
+    Penguji 1, & Penguji 2,\\[2.0cm]
+    \textbf{\NamaPengujiSatu} & \textbf{\NamaPengujiDua}\\
+    NIDN. \NIDNPengujiSatu & NIDN. \NIDNPengujiDua\\
   \end{tabular}
 \fi
 
@@ -53,17 +57,13 @@ Pada tanggal \TanggalUjian
   Tanggal \TanggalUjian
 \end{center}
 
-\vspace{0.8em}
+\vspace{1em}
 % ── Mengetahui Dekan ──
-\noindent
-\begin{minipage}[t]{0.6\linewidth}
-  Mengetahui,\\
-  \NamaFakultas\\
-  Dekan
-  \vspace{2.2cm}\\
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{7cm}@{}}
+  Mengetahui,\newline \NamaFakultas\newline Dekan \\[2.2cm]
   \textbf{\NamaDekan}\\
-  NIK. \NIKDekan
-\end{minipage}
+  NIK. \NIKDekan\\
+\end{tabular}
 \end{spacing}
 
 \clearpage

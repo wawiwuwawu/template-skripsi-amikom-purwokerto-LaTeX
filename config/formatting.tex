@@ -81,7 +81,11 @@
 \renewcommand{\cftsecaftersnum}{.}
 \setlength{\cftsecnumwidth}{1.8em}         % lebar "A."
 \setlength{\cftsecindent}{1.5em}
-\setlength{\cftbeforechapskip}{0.6em}
+\setlength{\cftbeforechapskip}{0em}        % rapat agar daftar isi muat satu halaman
+% Spasi judul halaman daftar (DAFTAR ISI/TABEL/GAMBAR/LAMPIRAN)
+% dirapatkan agar daftar isi tidak meluber ke halaman berikutnya.
+\setlength{\cftbeforetoctitleskip}{1em}
+\setlength{\cftaftertoctitleskip}{1em}
 
 % Entri DAFTAR TABEL / DAFTAR GAMBAR memakai prefix seperti
 % caption-nya: "Tabel 2.1. Data mahasiswa" / "Gambar 2.1. Logo lama".
@@ -161,7 +165,7 @@
   \addtocontents{toc}{\protect\contentsline{bagianakhir}{\protect#1}{}{}}%
 }
 \newcommand{\l@bagianakhir}[2]{%
-  \vskip 0.6em
+  \vskip 0.1em
   \noindent\textbf{#1}\par
 }
 \makeatother

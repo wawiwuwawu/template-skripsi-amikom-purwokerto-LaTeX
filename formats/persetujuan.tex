@@ -5,6 +5,8 @@
 %   Isi: judul, mahasiswa, tanggal ACC terakhir, blok tanda tangan
 %   pembimbing (gelar terbaru + NIDN penuh), pernyataan "telah
 %   diterima", serta mengetahui Dekan dan Kaprodi.
+%   Blok tanda tangan memakai tabular agar nama/NIDN antar kolom
+%   sejajar pada baseline yang sama.
 %============================================================
 \chapter*{PERSETUJUAN}
 \HalamanAwal{HALAMAN PERSETUJUAN}
@@ -23,29 +25,20 @@
   {\bfseries NIM. \NIM\par}
 \end{center}
 
-\vspace{0.4em}
-telah disetujui oleh dosen pembimbing Skripsi\\
+\vspace{1em}
+\noindent telah disetujui oleh dosen pembimbing Skripsi\\
 Pada tanggal \TanggalACC
 
 % ── Blok tanda tangan dosen pembimbing (spasi 1) ──
 \begin{spacing}{1.0}
+\vspace{1.6em}
 \ifduapembimbing
-  \noindent
-  \begin{minipage}[t]{0.48\linewidth}
-    \centering
-    Dosen Pembimbing 1,\\
-    \vspace{2.2cm}
-    \textbf{\NamaPembimbingSatu}\\
-    NIDN. \NIDNPembimbingSatu
-  \end{minipage}%
-  \hfill
-  \begin{minipage}[t]{0.48\linewidth}
-    \centering
-    Dosen Pembimbing 2,\\
-    \vspace{2.2cm}
-    \textbf{\NamaPembimbingDua}\\
-    NIDN. \NIDNPembimbingDua
-  \end{minipage}
+  \noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{6.8cm}
+                              >{\centering\arraybackslash}p{6.8cm}@{}}
+    Dosen Pembimbing 1, & Dosen Pembimbing 2,\\[2.2cm]
+    \textbf{\NamaPembimbingSatu} & \textbf{\NamaPembimbingDua}\\
+    NIDN. \NIDNPembimbingSatu & NIDN. \NIDNPembimbingDua\\
+  \end{tabular}
 \else
   \begin{center}
     Dosen Pembimbing 1,\\
@@ -55,7 +48,7 @@ Pada tanggal \TanggalACC
   \end{center}
 \fi
 
-\vspace{1em}
+\vspace{1.2em}
 % ── Pernyataan telah diterima (spasi 1) ──
 \begin{center}
   Skripsi ini telah diterima sebagai salah satu persyaratan\\
@@ -64,23 +57,14 @@ Pada tanggal \TanggalACC
 \end{center}
 
 \vspace{1em}
-% ── Mengetahui: Dekan & Kaprodi ──
-\noindent
-\begin{minipage}[t]{0.48\linewidth}
-  Mengetahui,\\
-  \NamaFakultas\\
-  Dekan,
-  \vspace{2.2cm}\\
-  \textbf{\NamaDekan}\\
-  NIK. \NIKDekan
-\end{minipage}%
-\hfill
-\begin{minipage}[t]{0.48\linewidth}
-  Kaprodi \NamaProdi
-  \vspace{2.2cm}\\
-  \textbf{\NamaKaprodi}\\
-  NIK. \NIKKaprodi
-\end{minipage}
+% ── Mengetahui: Dekan & Kaprodi (nama sejajar antar kolom) ──
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.8cm}
+                          >{\raggedright\arraybackslash}p{6.8cm}@{}}
+  Mengetahui,\newline \NamaFakultas\newline Dekan, &
+  Kaprodi \NamaProdi \\[2.2cm]
+  \textbf{\NamaDekan} & \textbf{\NamaKaprodi}\\
+  NIK. \NIKDekan & NIK. \NIKKaprodi\\
+\end{tabular}
 \end{spacing}
 
 \clearpage
