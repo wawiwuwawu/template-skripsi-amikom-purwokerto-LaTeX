@@ -99,10 +99,13 @@ huruf (a., b.), Manfaat/Landasan/Penelitian Sebelumnya memakai angka
 \end{tabel}
 ```
 Rujuk wajib: `...ditunjukkan pada Tabel~\ref{tab:data}`.
-Contoh "(Lanjutan)" statis (nomor tabel TIDAK bertambah, seperti template
-asli) memakai `\caption*{Tabel 2.3. Judul (Lanjutan)}` diikuti
-`\addtocounter{table}{-1}` **di luar** lingkungan tabel (di dalam longtable
-perintah itu memicu `Misplaced \noalign`).
+Contoh tabel yang melewati halaman (Tabel 2.3 xyz di `chapters/bab2.tex`)
+memakai `\pagebreak` **di antara baris** longtable agar pemutusan halaman
+terlihat di template — pada halaman lanjutan judul
+"Tabel X.Y. ... (Lanjutan)" + kepala berulang muncul otomatis dari
+`\TabelLanjutan` di `\endhead`. Catatan: `\caption*` di longtable tetap
+menaikkan counter tabel, dan `\addtocounter` di dalam longtable memicu
+`Misplaced \noalign` — koreksi nomor dilakukan di luar lingkungan tabel.
 
 ### Gambar (caption di bawah, dirujuk di naskah)
 ```tex

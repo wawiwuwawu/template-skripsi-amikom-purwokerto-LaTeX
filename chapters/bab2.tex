@@ -104,6 +104,11 @@ Jika penulisan tabel lebih dari 1 halaman, maka pada halaman
 berikutnya tetap dituliskan judul tabel seperti pada contoh
 berikut
 
+% ── Contoh tabel yang MELEWATI halaman: longtable otomatis
+%    meneruskan ke halaman berikutnya dengan judul
+%    "Tabel 2.3. ... (Lanjutan)" + kepala berulang (\TabelLanjutan
+%    di \endhead). \pagebreak antar baris memaksa pindah halaman
+%    agar contoh ini terlihat (tabel contoh pendek). ──
 \begin{tabel}{@{}c l l l@{}}
   \caption{Nilai mata kuliah xyz}\label{tab:nilai-xyz}\\
   \hline
@@ -126,32 +131,11 @@ berikut
   103 & 11.11.0103 & Mahasiswa 103 & B\\
   104 & 11.11.0104 & Mahasiswa 104 & A\\
   105 & 11.11.0105 & Mahasiswa 105 & B\\
-\end{tabel}
-
-% ── Contoh judul halaman lanjutan tabel — ditulis manual dengan
-%    nomor yang sama (2.3), sesuai template asli. \caption* di
-%    longtable tetap menaikkan counter tabel, jadi dikoreksi -1
-%    (di luar tabel!) agar tabel berikutnya tetap bernomor benar. ──
-\begin{tabel}{@{}c l l l@{}}
-  \caption*{Tabel 2.3. Nilai mata kuliah xyz (Lanjutan)}\\
-  \hline
-  \rowcolor{gray!25}
-  No & NIM & Nama Mahasiswa & Nilai\\
-  \hline
-  \endfirsthead
-  \hline
-  \rowcolor{gray!25}
-  No & NIM & Nama Mahasiswa & Nilai\\
-  \hline
-  \endhead
-  \hline
-  \endfoot
-  \endlastfoot
+  \pagebreak
   106 & 11.11.0106 & Mahasiswa 106 & A\\
   107 & 11.11.0107 & Mahasiswa 107 & B\\
   108 & 11.11.0108 & Mahasiswa 108 & A\\
 \end{tabel}
-\addtocounter{table}{-1}
 \end{isi}
 
 \section{Penelitian Sebelumnya}
