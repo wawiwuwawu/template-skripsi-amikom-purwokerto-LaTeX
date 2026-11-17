@@ -95,6 +95,10 @@ reference/                — template Word asli + panduan spesifikasi
 - `\begin{tabel}{kolom}...\end{tabel}` — tabel TNR 10 spasi 1; dukung
   halaman lanjutan dengan `\TabelLanjutan{n}{Judul}` di `\endhead`
   (contoh lengkap di `chapters/bab2.tex`).
+- `\begin{landskape}...\end{landskape}` — halaman miring (landscape):
+  halaman PDF benar-benar dirotasi di viewer & saat dicetak, nomor
+  halaman otomatis horizontal di kanan atas orientasi miring (contoh:
+  Tabel 2.3 Penelitian Sebelumnya). Lebar teks saat landscape ≈ 22,7 cm.
 - `\TeksTersembunyi{teks}` — teks putih; `\HalamanAwal{NAMA}` — teks putih +
   entri daftar isi; `\TocHalaman{NAMA}` — entri daftar isi saja.
 - `\Istilah{istilah}{penjelasan}` — entri Daftar Istilah.

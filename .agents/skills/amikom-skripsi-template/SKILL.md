@@ -104,6 +104,14 @@ Modul/bahan ajar dan blogspot dilarang keras.
 Wajib mode matematika LaTeX: inline `$x$`, display `\begin{equation}...\end{equation}`
 dan rujuk `\eqref{eq:label}`. Dilarang pakai karakter Unicode mentah.
 
+### Halaman landscape (kertas miring)
+Bungkus konten dengan `\begin{landscape}...\end{landscape}` (paket `pdflscape`
+sudah termuat): halaman PDF benar-benar dirotasi di viewer & cetak, nomor
+halaman mengikuti orientasi miring (kanan atas, sesuai template asli).
+Contoh nyata: Tabel 2.3 Penelitian Sebelumnya di `chapters/bab2.tex`.
+Lebar teks saat landscape ≈ 22,7 cm — sesuaikan lebar kolom tabel agar tidak
+melebihi batas. Longtable/(Lanjutan) tetap bekerja di dalamnya.
+
 ### Lampiran (kartu bimbingan WAJIB)
 `\Lampiran{Judul}` otomatis bernomor & masuk Daftar Lampiran. Masukkan scan
 dengan `\includepdf[pages=1]{assets/scan.pdf}` atau pakai `\KotakScan{...}`

@@ -161,9 +161,12 @@ digunakan dalam penelitian.
 
 % ── Contoh tabel penelitian sebelumnya (minimal 3 artikel:
 %    2 jurnal nasional, 1 jurnal internasional) ──
-% Catatan: tabel ini boleh dibuat landscape/portrait sesuai
-% kebijakan fakultas/prodi masing-masing.
-\begin{tabel}{@{}c p{2.6cm} p{2.6cm} p{2.6cm} p{2.4cm} p{2.2cm}@{}}
+% Tabel ini dibuat LANDSCAPE (halaman miring): halaman PDF
+% benar-benar dirotasi saat dilihat/dicetak, dan nomor halaman
+% tetap tercetak di kanan atas dalam orientasi miring (sesuai
+% contoh halaman landscape di template asli).
+\begin{landskape}
+\begin{tabel}{@{}c p{4.4cm} p{4.4cm} p{4.4cm} p{3.9cm} p{3.6cm}@{}}
   \caption{Penelitian sebelumnya}\label{tab:penelitian-sebelumnya}\\
   \hline
   No & Peneliti & Judul & Hasil Penelitian & Persamaan & Perbedaan\\
@@ -208,3 +211,31 @@ digunakan dalam penelitian.
       mikrokontroler &
       Studi ini menggunakan Arduino Uno.\\
 \end{tabel}
+\end{landskape}
+
+% ── CONTOH HALAMAN LANDSCAPE (opsional) ──────────────────────
+% Untuk tabel/gambar lain yang membutuhkan halaman miring,
+% bungkus dengan lingkungan landskape seperti contoh di atas:
+%
+%   \begin{landskape}
+%     \begin{tabel}{@{}c p{10cm} p{8cm}@{}}
+%       \caption{Judul tabel landscape}\label{tab:landscape}\\
+%       \hline
+%       No & Kolom A & Kolom B\\
+%       \hline
+%       \endfirsthead
+%       \TabelLanjutan{3}{Judul tabel landscape}\\
+%       \hline
+%       No & Kolom A & Kolom B\\
+%       \hline
+%       \endhead
+%       \hline
+%       \endfoot
+%       \endlastfoot
+%       1 & Data 1 & Data 2\\
+%     \end{tabel}
+%   \end{landskape}
+%
+% Lebar teks saat landscape ≈ 22,7 cm — sesuaikan jumlah & lebar
+% kolom agar tidak melebihi batas tersebut. Nomor halaman otomatis
+% tampil horizontal di kanan atas orientasi miring.

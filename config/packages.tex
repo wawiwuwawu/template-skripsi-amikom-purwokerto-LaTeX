@@ -14,9 +14,15 @@
 \usepackage{setspace}                 % \singlespacing, \onehalfspacing, \doublespacing
 \usepackage{indentfirst}              % paragraf pertama juga menjorok
 \usepackage{graphicx}
-\usepackage{xcolor}                   % dipakai untuk teks tersembunyi (putih)
 \usepackage{array}
 \usepackage{longtable}                % tabel multi-halaman dengan "(Lanjutan)"
+\usepackage{pdflscape}                % halaman miring (landscape): PDF benar-benar dirotasi
+% pdflscape menulis atribut /Rotate lewat PDF management API.
+% Paket `pdfmanagement` (TeX Live 2025+/MiKTeX) mengaktifkan API
+% tersebut; jika tidak tersedia, halaman landscape tetap bekerja
+% hanya tanpa rotasi otomatis di viewer. Harus dimuat SEBELUM xcolor.
+\IfFileExists{pdfmanagement.sty}{\usepackage{pdfmanagement}}{}
+\usepackage{xcolor}                   % dipakai untuk teks tersembunyi (putih)
 \usepackage{enumitem}
 \usepackage{amsmath}                  % rumus matematika + \eqref
 

@@ -229,6 +229,28 @@
   \multicolumn{#1}{c}{Tabel \thetable. #2 (Lanjutan)}\\
 }
 
+% ── Halaman landscape (kertas miring) ────────────────────────
+% Nomor halaman pada halaman miring tetap terbaca horizontal di
+% KANAN ATAS orientasi miring (sesuai contoh halaman landscape di
+% template asli). Caranya: glyph dicetak di kiri-atas lembar fisik
+% dengan rotasi 90°, sehingga setelah halaman dirotasi viewer
+% (/Rotate) ia tampil horizontal di pojok kanan atas.
+\fancypagestyle{landskape}{%
+  \fancyhf{}%
+  \fancyhead[L]{\rotatebox{90}{\thepage}}%
+  \renewcommand{\headrulewidth}{0pt}%
+  \renewcommand{\footrulewidth}{0pt}%
+}
+% Lingkungan landskape — pembungkus nyaman:
+%   \begin{landskape} ... konten/tabel ... \end{landskape}
+\newenvironment{landskape}{%
+  \begin{landscape}%
+  \pagestyle{landskape}%
+}{%
+  \end{landscape}%
+  \pagestyle{utama}%
+}
+
 %============================================================
 % DAFTAR PUSTAKA — GAYA AMIKOM (biblatex)
 %============================================================
