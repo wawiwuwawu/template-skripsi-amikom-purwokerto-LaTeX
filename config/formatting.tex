@@ -18,7 +18,16 @@
 
 % Spasi utama naskah (Bab I–V, termasuk judul bab): spasi 2.
 % Halaman-halaman awal mengatur spasinya sendiri di file masing-masing.
-\doublespacing
+%
+% KALIBRASI: angka di bawah (dan 1.43 utk spasi 1,5) dipilih agar
+% tinggi baris render = tinggi baris "Double"/"1.5" milik Word pada
+% Times New Roman 12pt — sama seperti template asli saat dibanding
+% berdampingan:
+%   Word Double = 2 x 13.8pt = 27.6pt  -> 27.6 / 14.5 ≈ 1.9
+%   Word 1.5    = 1.5 x 13.8pt = 20.7pt -> 20.7 / 14.5 ≈ 1.43
+% (\doublespacing bawaan setspace = 24.2pt, tampak lebih rapat 14%
+% dari Word; jangan dipakai sebagai "spasi 2".)
+\setstretch{1.9}
 
 % ── Penomoran ────────────────────────────────────────────────
 % Bab di daftar isi & judul pakai angka Romawi: BAB I, BAB II, ...
@@ -221,7 +230,7 @@
 % Pernyataan Keaslian Penelitian (diganti materai asli saat
 % dicetak dan ditandatangani).
 \newcommand{\KotakMaterai}{%
-  \fbox{\parbox[c][2.8cm][c]{4.5cm}{\centering Bermaterai\\ Rp10.000}}%
+  \fbox{\parbox[c][2.2cm][c]{4.5cm}{\centering Bermaterai\\ Rp10.000}}%
 }
 
 % \KotakScan — kotak penanda tempat memasukkan hasil scan pada

@@ -2,18 +2,20 @@
 % ABSTRACT (Bahasa Inggris)
 %   Diterjemahkan dari abstrak bahasa Indonesia, dicetak miring
 %   total, diakhiri Keywords (3–5 kata). Spasi 1.
-%   Catatan: \itshape dibungkus group agar tidak bocor ke halaman
-%   berikutnya.
+%   PENTING: \singlespacing dibungkus \begingroup...\endgroup —
+%   tanpa itu deklarasinya bocor dan seluruh isi Bab I–V ikut
+%   kehilangan spasi 2.
 %============================================================
+\begingroup
+\singlespacing
+
 % Judul "ABSTRACT" bold + ITALIC (seluruh halaman miring, sesuai
 % template asli); entri DAFTAR ISI juga dicetak miring.
 \chapter*{\itshape ABSTRACT}
 \TocHalaman{\textit{ABSTRACT}}
-\singlespacing
 
 % Ganti teks panduan di bawah ini dengan terjemahan abstrak Anda.
 % Seluruh isi abstrak ditulis dengan huruf miring (italic).
-\begingroup
 \itshape
 
 \noindent
@@ -28,6 +30,5 @@ and finally reveals the conclusion of the research.
 \vspace{1em}
 \noindent Keywords: \Keywords.
 
-\endgroup
-
 \clearpage
+\endgroup

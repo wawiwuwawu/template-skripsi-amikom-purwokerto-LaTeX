@@ -3,10 +3,15 @@
 %   1 paragraf, 150–250 kata, spasi 1, Times New Roman 12.
 %   Memuat latar belakang, metode, hasil, dan kesimpulan.
 %   Diakhiri 3–5 kata kunci.
+%   PENTING: \singlespacing dibungkus \begingroup...\endgroup —
+%   tanpa itu deklarasinya bocor dan seluruh isi Bab I–V ikut
+%   kehilangan spasi 2.
 %============================================================
+\begingroup
+\singlespacing
+
 \chapter*{ABSTRAK}
 \TocHalaman{ABSTRAK}
-\singlespacing
 
 % Ganti teks panduan di bawah ini dengan abstrak Anda.
 % Abstrak memuat: apa dan mengapa penelitian dikerjakan, bagaimana
@@ -26,3 +31,4 @@ mengungkapkan kesimpulan dari penelitian.
 \noindent Kata kunci: \KataKunci.
 
 \clearpage
+\endgroup
