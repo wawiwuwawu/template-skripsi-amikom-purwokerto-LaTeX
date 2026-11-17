@@ -1,70 +1,136 @@
 %============================================================
-% HALAMAN PERSETUJUAN DOSEN PEMBIMBING
-%   Mendukung 2 Pembimbing atau Pembimbing Tunggal
-%   (atur di config/toggles.tex: \duapembimbingtrue / \duapembimbingfalse)
-%   Isi: judul, mahasiswa, tanggal ACC terakhir, blok tanda tangan
-%   pembimbing (gelar terbaru + NIDN penuh), pernyataan "telah
-%   diterima", serta mengetahui Dekan dan Kaprodi.
-%   Blok tanda tangan memakai tabular agar nama/NIDN antar kolom
-%   sejajar pada baseline yang sama.
+% HALAMAN PERSETUJUAN DOSEN PEMBIMBING — DUA VARIAN
+% Sesuai template asli: tidak ada judul terlihat, hanya teks putih
+% "HALAMAN PERSETUJUAN" (masuk DAFTAR ISI). Template asli memuat
+% DUA halaman contoh — pilih SALAH SATU, hapus halaman lainnya:
+%   Halaman 1 : varian 2 Pembimbing  (\PersetujuanDuaPembimbing)
+%   Halaman 2 : varian Pembimbing Tunggal (\PersetujuanSatuPembimbing)
+% Spasi: isi 1,5; kalimat persetujuan & pengesahan gelar spasi 1.
 %============================================================
-\chapter*{PERSETUJUAN}
+
+% ─────────────────────────────────────────────────────────────
+% VARIAN 1 : DUA PEMBIMBING
+% ─────────────────────────────────────────────────────────────
+\newcommand{\PersetujuanDuaPembimbing}{%
 \HalamanAwal{HALAMAN PERSETUJUAN}
+\onehalfspacing
 
 \begin{center}
   {\bfseries Skripsi\par}
   \vspace{0.4em}
   {\bfseries\MakeUppercase{\JudulSkripsi}\par}
-  \JudulStudiKasus
+  {\JudulStudiKasus\par}
 
-  \vspace{1.2em}
+  \vspace{0.8em}
   Yang dipersiapkan dan disusun oleh
 
-  \vspace{0.3em}
+  \vspace{0.2em}
   {\bfseries \NamaMahasiswa\par}
   {\bfseries NIM. \NIM\par}
 \end{center}
 
-\vspace{1em}
-\noindent telah disetujui oleh dosen pembimbing Skripsi\\
-Pada tanggal \TanggalACC
-
-% ── Blok tanda tangan dosen pembimbing (spasi 1) ──
+\vspace{0.8em}
 \begin{spacing}{1.0}
-\vspace{1.6em}
-\ifduapembimbing
-  \noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{6.8cm}
-                              >{\centering\arraybackslash}p{6.8cm}@{}}
-    Dosen Pembimbing 1, & Dosen Pembimbing 2,\\[2.2cm]
-    \textbf{\NamaPembimbingSatu} & \textbf{\NamaPembimbingDua}\\
-    NIDN. \NIDNPembimbingSatu & NIDN. \NIDNPembimbingDua\\
-  \end{tabular}
-\else
-  \begin{center}
-    Dosen Pembimbing 1,\\
-    \vspace{2.2cm}
-    \textbf{\NamaPembimbingSatu}\\
-    NIDN. \NIDNPembimbingSatu
-  \end{center}
-\fi
+\begin{center}
+  telah disetujui oleh dosen pembimbing Skripsi\\
+  Pada tanggal \TanggalACC
+\end{center}
 
 \vspace{1.2em}
-% ── Pernyataan telah diterima (spasi 1) ──
+% Blok tanda tangan: label / ruang ttd / nama (gelar terbaru) / NIDN
+\noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{6.8cm}
+                              >{\centering\arraybackslash}p{6.8cm}@{}}
+  Dosen Pembimbing 1, & Dosen Pembimbing 2,\\[1.6cm]
+  \textbf{\NamaPembimbingSatu} & \textbf{\NamaPembimbingDua}\\
+  NIDN. \NIDNPembimbingSatu & NIDN. \NIDNPembimbingDua\\
+\end{tabular}
+
+\vspace{1.2em}
 \begin{center}
   Skripsi ini telah diterima sebagai salah satu persyaratan\\
   untuk memperoleh gelar \GelarSkripsi\\
   Tanggal \TanggalUjian
 \end{center}
+\end{spacing}
 
-\vspace{1em}
-% ── Mengetahui: Dekan & Kaprodi (nama sejajar antar kolom) ──
+\vspace{0.8em}
+\begin{center}
+  Mengetahui,
+\end{center}
+
+% Mengetahui Dekan & Kaprodi — label Kaprodi turun satu baris agar
+% sejajar dengan "Dekan," (seperti template asli)
 \noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.8cm}
                           >{\raggedright\arraybackslash}p{6.8cm}@{}}
-  Mengetahui,\newline \NamaFakultas\newline Dekan, &
-  Kaprodi \NamaProdi \\[2.2cm]
+  \NamaFakultas\newline Dekan, & \phantom{Fakultas}\newline Kaprodi \NamaProdi\\[1.6cm]
   \textbf{\NamaDekan} & \textbf{\NamaKaprodi}\\
   NIK. \NIKDekan & NIK. \NIKKaprodi\\
 \end{tabular}
-\end{spacing}
 
 \clearpage
+}
+
+% ─────────────────────────────────────────────────────────────
+% VARIAN 2 : PEMBIMBING TUNGGAL
+% ─────────────────────────────────────────────────────────────
+\newcommand{\PersetujuanSatuPembimbing}{%
+% Penanda putih tanpa entri daftar isi (di DAFTAR ISI template asli
+% hanya tercantum satu entri HALAMAN PERSETUJUAN):
+\TeksTersembunyi{HALAMAN PERSETUJUAN}\par
+\onehalfspacing
+
+\begin{center}
+  {\bfseries Skripsi\par}
+  \vspace{0.4em}
+  {\bfseries\MakeUppercase{\JudulSkripsi}\par}
+  {\JudulStudiKasus\par}
+
+  \vspace{0.8em}
+  Yang dipersiapkan dan disusun oleh
+
+  \vspace{0.2em}
+  {\bfseries \NamaMahasiswa\par}
+  {\bfseries NIM. \NIM\par}
+\end{center}
+
+\vspace{0.8em}
+\begin{spacing}{1.0}
+\begin{center}
+  telah disetujui oleh dosen pembimbing Skripsi\\
+  Pada tanggal \TanggalACC
+\end{center}
+
+\vspace{1.2em}
+\begin{center}
+  Dosen Pembimbing 1,\\[1.6cm]
+  \textbf{\NamaPembimbingSatu}\\
+  NIDN. \NIDNPembimbingSatu
+\end{center}
+
+\vspace{1.2em}
+\begin{center}
+  Skripsi ini telah diterima sebagai salah satu persyaratan\\
+  untuk memperoleh gelar \GelarSkripsi\\
+  Tanggal \TanggalUjian
+\end{center}
+\end{spacing}
+
+\vspace{0.8em}
+\begin{center}
+  Mengetahui,
+\end{center}
+
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.8cm}
+                          >{\raggedright\arraybackslash}p{6.8cm}@{}}
+  \NamaFakultas\newline Dekan, & \phantom{Fakultas}\newline Kaprodi \NamaProdi\\[1.6cm]
+  \textbf{\NamaDekan} & \textbf{\NamaKaprodi}\\
+  NIK. \NIKDekan & NIK. \NIKKaprodi\\
+\end{tabular}
+
+\clearpage
+}
+
+% ── Render kedua varian (sesuai template asli: pilih salah satu,
+%    hapus baris yang tidak dipakai) ──
+\PersetujuanDuaPembimbing
+\PersetujuanSatuPembimbing

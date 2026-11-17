@@ -4,8 +4,10 @@
 %============================================================
 
 % Dua pembimbing atau pembimbing tunggal?
-%   true  -> Halaman Persetujuan memuat Dosen Pembimbing 1 & 2
-%   false -> Halaman Persetujuan memuat Pembimbing Tunggal saja
+%   true  -> Surat Pernyataan Keaslian mencantumkan Dosen Pembimbing 2
+%   false -> Surat Pernyataan Keaslian menulis "-" untuk Pembimbing 2
+%   (Halaman Persetujuan memuat kedua varian: pilih salah satu di
+%    formats/persetujuan.tex, hapus baris render yang tidak dipakai)
 \newif\ifduapembimbing
 \duapembimbingtrue
 

@@ -49,10 +49,14 @@ Ilmu Komputer), `\NamaProdi`, `\NamaFakultas`, `\TahunUjian`, `\TanggalACC`,
 `\TanggalUjian`, `\KataKunci`, `\Keywords`.
 
 ### Ganti mode pembimbing / penguji / daftar istilah
-`config/toggles.tex`: `\duapembimbingfalse` untuk pembimbing tunggal (halaman
-pernyataan otomatis menulis `-` untuk Pembimbing 2), `\pengujitigafalse`
-menghapus kolom Penguji 3/Pendamping, `\daftaristilahtrue` menampilkan
-Daftar Istilah.
+`config/toggles.tex`: `\duapembimbingfalse` untuk pembimbing tunggal (Surat
+Pernyataan Keaslian otomatis menulis `-` untuk Pembimbing 2),
+`\pengujitigafalse` menghapus baris Penguji 3/Pendamping,
+`\daftaristilahtrue` menampilkan Daftar Istilah.
+Halaman Persetujuan menyusun KEDUA varian seperti template asli (2 pembimbing
+lalu pembimbing tunggal) — pilih salah satu dengan berkomentar pada baris
+`\PersetujuanSatuPembimbing` / `\PersetujuanDuaPembimbing` di
+`formats/persetujuan.tex`.
 
 ### Menulis isi bab
 Edit `chapters/bab1.tex`–`bab5.tex`. Struktur sub-bab AMIKOM pakai huruf:

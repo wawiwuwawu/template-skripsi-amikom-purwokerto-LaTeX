@@ -1,69 +1,79 @@
 %============================================================
 % HALAMAN PENGESAHAN DEWAN PENGUJI
-%   Isi: tanggal ujian, tabel daftar penguji (beserta NIDN),
-%   pernyataan pengesahan gelar S.Kom., dan tanda tangan Dekan.
-%   Penguji 3 / Pendamping diatur di config/toggles.tex.
-%   Blok penguji memakai tabular agar nama/NIDN antar kolom
-%   sejajar pada baseline yang sama.
+% Sesuai template asli: judul terlihat "PENGESAHAN" + teks putih
+% "HALAMAN PENGESAHAN". Daftar penguji berupa baris BERTUMPUK
+% (Penguji 1, Penguji 2, Penguji 3/Pendamping), blok Mengetahui
+% Dekan rata tengah satu kolom.
 %============================================================
 \chapter*{PENGESAHAN}
 \HalamanAwal{HALAMAN PENGESAHAN}
+\onehalfspacing
 
 \begin{center}
   {\bfseries Skripsi\par}
   \vspace{0.4em}
   {\bfseries\MakeUppercase{\JudulSkripsi}\par}
-  \JudulStudiKasus
+  {\JudulStudiKasus\par}
+\end{center}
 
-  \vspace{1.2em}
+\begin{center}
   Yang dipersiapkan dan disusun oleh
+\end{center}
 
-  \vspace{0.3em}
+\begin{center}
   {\bfseries \NamaMahasiswa\par}
   {\bfseries NIM. \NIM\par}
 \end{center}
 
-\vspace{1em}
-\noindent Telah dipertahankan di depan dewan penguji\\
-Pada tanggal \TanggalUjian
-
-% ── Tabel daftar penguji (spasi 1) ──
+\vspace{0.8em}
 \begin{spacing}{1.0}
-\vspace{1.6em}
+\begin{center}
+  Telah dipertahankan di depan dewan penguji\\
+  Pada tanggal \TanggalUjian
+\end{center}
+
+\vspace{1.2em}
+% ── Daftar penguji: baris bertumpuk (label / ruang ttd / nama / NIDN)
 \ifpengujitiga
-  \noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{4.4cm}
-                              >{\centering\arraybackslash}p{4.4cm}
-                              >{\centering\arraybackslash}p{4.4cm}@{}}
-    Penguji 1, & Penguji 2, & Penguji 3 / Pendamping,\\[2.0cm]
-    \textbf{\NamaPengujiSatu} & \textbf{\NamaPengujiDua} &
-    \textbf{\NamaPengujiTiga}\\
-    NIDN. \NIDNPengujiSatu & NIDN. \NIDNPengujiDua &
-    NIDN. \NIDNPengujiTiga\\
-  \end{tabular}
+  \noindent Penguji 1,\\
+  \textbf{\NamaPengujiSatu}\\
+  NIDN. \NIDNPengujiSatu
+  \vspace{0.9cm}
+
+  \noindent Penguji 2,\\
+  \textbf{\NamaPengujiDua}\\
+  NIDN. \NIDNPengujiDua
+  \vspace{0.9cm}
+
+  \noindent Penguji 3 / Pendamping,\\
+  \textbf{\NamaPengujiTiga}\\
+  NIDN. \NIDNPengujiTiga
 \else
-  \noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{6.5cm}
-                              >{\centering\arraybackslash}p{6.5cm}@{}}
-    Penguji 1, & Penguji 2,\\[2.0cm]
-    \textbf{\NamaPengujiSatu} & \textbf{\NamaPengujiDua}\\
-    NIDN. \NIDNPengujiSatu & NIDN. \NIDNPengujiDua\\
-  \end{tabular}
+  \noindent Penguji 1,\\
+  \textbf{\NamaPengujiSatu}\\
+  NIDN. \NIDNPengujiSatu
+  \vspace{0.9cm}
+
+  \noindent Penguji 2,\\
+  \textbf{\NamaPengujiDua}\\
+  NIDN. \NIDNPengujiDua
 \fi
 
 \vspace{1.2em}
-% ── Pernyataan pengesahan (spasi 1) ──
 \begin{center}
   Skripsi ini telah disahkan sebagai salah satu persyaratan\\
   untuk memperoleh gelar \GelarSkripsi\\
   Tanggal \TanggalUjian
 \end{center}
-
-\vspace{1em}
-% ── Mengetahui Dekan ──
-\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{7cm}@{}}
-  Mengetahui,\newline \NamaFakultas\newline Dekan \\[2.2cm]
-  \textbf{\NamaDekan}\\
-  NIK. \NIKDekan\\
-\end{tabular}
 \end{spacing}
+
+\vspace{0.8em}
+% ── Mengetahui Dekan: blok rata tengah satu kolom (sesuai template asli)
+\begin{center}
+  \NamaFakultas\\
+  Dekan\\[1.6cm]
+  \textbf{\NamaDekan}\\
+  NIK. \NIKDekan
+\end{center}
 
 \clearpage
