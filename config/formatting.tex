@@ -16,6 +16,26 @@
 \clubpenalty=10000                % cegah baris yatim/piatu
 \widowpenalty=10000
 
+% ── Lingkungan `isi` — paragraf isi BAB I–V ─────────────────
+% Template asli (DOCX): paragraf isi BAB menjorok KIRI 0,75cm
+% (baris lanjutan mulai di 4,75cm dari tepi kertas, lebar kolom isi
+% 13,25cm) dan baris PERTAMA menjorok tambahan 1cm (total 1,75cm
+% dari margin). Sub-bab & daftar tetap mengikuti indent ini.
+% Halaman-halaman awal (abstrak, kata pengantar, dst.) TIDAK memakai
+% indent kiri ini — langsung dari margin.
+\newenvironment{isi}{%
+  \list{}{%
+    \setlength{\leftmargin}{0.75cm}%
+    \setlength{\rightmargin}{0pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\listparindent}{1cm}%
+    \setlength{\itemsep}{0pt}%
+    \setlength{\parsep}{0pt}%
+    \setlength{\topsep}{0pt}%
+    \setlength{\partopsep}{0pt}}%
+  \item\relax
+}{\endlist}
+
 % Spasi utama naskah (Bab I–V, termasuk judul bab): spasi 2.
 % Halaman-halaman awal mengatur spasinya sendiri di file masing-masing.
 %

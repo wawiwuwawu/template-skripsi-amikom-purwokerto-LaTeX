@@ -65,6 +65,18 @@ Edit `chapters/bab1.tex`–`bab5.tex`. Struktur sub-bab AMIKOM pakai huruf:
 Sub-sub-bab: `\subsection{...}` → "1. ..."; tingkat keempat → "a. ...".
 Hanya BAB dan sub-bab yang masuk DAFTAR ISI (otomatis, tebal).
 
+**Paragraf isi BAB wajib dibungkus lingkungan `isi`** — indentasi template
+asli: baris lanjutan menjorok kiri 0,75cm, baris pertama total 1,75cm dari
+margin (kolom isi 13,25cm). Sub-bab tetap di margin. Daftar di dalam isi
+pakai `leftmargin=0cm` agar sejajar dengan indent paragraf.
+
+**Teks contoh di semua halaman disalin verbatim dari
+`reference/Template_Skripsi.docx`** (BAB I–V, abstrak, abstract, kata
+pengantar, persembahan, motto) — jangan diparafrase; ganti dengan naskah
+mahasiswa. Daftar bernomor di template asli: Batasan & Tujuan memakai
+huruf (a., b.), Manfaat/Landasan/Penelitian Sebelumnya memakai angka
+(1., 2., ...), tanpa tanda baca di ujung butir.
+
 ### Tabel (wajib: caption di atas, isi TNR 10 spasi 1, kepala abu-abu, dirujuk di naskah)
 ```tex
 \begin{tabel}{@{}c l l@{}}
@@ -87,6 +99,10 @@ Hanya BAB dan sub-bab yang masuk DAFTAR ISI (otomatis, tebal).
 \end{tabel}
 ```
 Rujuk wajib: `...ditunjukkan pada Tabel~\ref{tab:data}`.
+Contoh "(Lanjutan)" statis (nomor tabel TIDAK bertambah, seperti template
+asli) memakai `\caption*{Tabel 2.3. Judul (Lanjutan)}` diikuti
+`\addtocounter{table}{-1}` **di luar** lingkungan tabel (di dalam longtable
+perintah itu memicu `Misplaced \noalign`).
 
 ### Gambar (caption di bawah, dirujuk di naskah)
 ```tex
