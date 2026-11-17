@@ -1,17 +1,25 @@
 %============================================================
 % HALAMAN PERSETUJUAN DOSEN PEMBIMBING — DUA VARIAN
-% Sesuai template asli: tidak ada judul terlihat, hanya teks putih
-% "HALAMAN PERSETUJUAN" (masuk DAFTAR ISI). Template asli memuat
-% DUA halaman contoh — pilih SALAH SATU, hapus halaman lainnya:
-%   Halaman 1 : varian 2 Pembimbing  (\PersetujuanDuaPembimbing)
-%   Halaman 2 : varian Pembimbing Tunggal (\PersetujuanSatuPembimbing)
-% Spasi: isi 1,5; kalimat persetujuan & pengesahan gelar spasi 1.
+% Sesuai template asli (Template_Skripsi.docx):
+%   - judul "PERSETUJUAN" TERLIHAT (bold) di atas halaman,
+%     diikuti teks putih "HALAMAN PERSETUJUAN" (masuk DAFTAR ISI);
+%   - template asli memuat DUA halaman contoh — pilih SALAH
+%     SATU, hapus baris render yang tidak dipakai:
+%       Halaman 1 : varian 2 Pembimbing  (\PersetujuanDuaPembimbing)
+%       Halaman 2 : varian Pembimbing Tunggal (\PersetujuanSatuPembimbing)
+%   - nama dosen dicetak bergaris bawah (posisi tanda tangan),
+%     diikuti NIDN — persis seperti versi terisi pada skripsi
+%     resmi AMIKOM;
+%   - spasi isi 1,5; kalimat persetujuan & pengesahan gelar spasi 1.
 %============================================================
 
 % ─────────────────────────────────────────────────────────────
 % VARIAN 1 : DUA PEMBIMBING
 % ─────────────────────────────────────────────────────────────
 \newcommand{\PersetujuanDuaPembimbing}{%
+\begin{center}
+  {\bfseries PERSETUJUAN\par}
+\end{center}
 \HalamanAwal{HALAMAN PERSETUJUAN}
 \onehalfspacing
 
@@ -37,11 +45,13 @@
 \end{center}
 
 \vspace{1.2em}
-% Blok tanda tangan: label / ruang ttd / nama (gelar terbaru) / NIDN
-\noindent\begin{tabular}{@{}>{\centering\arraybackslash}p{6.8cm}
-                              >{\centering\arraybackslash}p{6.8cm}@{}}
-  Dosen Pembimbing 1, & Dosen Pembimbing 2,\\[1.6cm]
-  \textbf{\NamaPembimbingSatu} & \textbf{\NamaPembimbingDua}\\
+% Blok tanda tangan: dua kolom rata kiri (tabular asli mulai dari
+% margin kiri), label / ruang ttd / nama bergaris bawah / NIDN.
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{7cm}
+                              >{\raggedright\arraybackslash}p{6.75cm}@{}}
+  Dosen Pembimbing 1, & Dosen Pembimbing 2,\\[2.2cm]
+  \NamaTTD{\NamaPembimbingSatu} &
+  \NamaTTD{\NamaPembimbingDua}\\
   NIDN. \NIDNPembimbingSatu & NIDN. \NIDNPembimbingDua\\
 \end{tabular}
 
@@ -58,12 +68,12 @@
   Mengetahui,
 \end{center}
 
-% Mengetahui Dekan & Kaprodi — label Kaprodi turun satu baris agar
-% sejajar dengan "Dekan," (seperti template asli)
-\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.8cm}
-                          >{\raggedright\arraybackslash}p{6.8cm}@{}}
-  \NamaFakultas\newline Dekan, & \phantom{Fakultas}\newline Kaprodi \NamaProdi\\[1.6cm]
-  \textbf{\NamaDekan} & \textbf{\NamaKaprodi}\\
+% Mengetahui Dekan & Kaprodi — tabel rata kiri (seperti template
+% asli); label Kaprodi turun satu baris agar sejajar "Dekan,"
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{8cm}
+                          >{\raggedright\arraybackslash}p{6cm}@{}}
+  \NamaFakultas\newline Dekan, & \phantom{Fakultas}\newline Kaprodi \NamaProdi\\[2.1cm]
+  \NamaTTD{\NamaDekan} & \NamaTTD{\NamaKaprodi}\\
   NIK. \NIKDekan & NIK. \NIKKaprodi\\
 \end{tabular}
 
@@ -74,8 +84,11 @@
 % VARIAN 2 : PEMBIMBING TUNGGAL
 % ─────────────────────────────────────────────────────────────
 \newcommand{\PersetujuanSatuPembimbing}{%
-% Penanda putih tanpa entri daftar isi (di DAFTAR ISI template asli
-% hanya tercantum satu entri HALAMAN PERSETUJUAN):
+\begin{center}
+  {\bfseries PERSETUJUAN\par}
+\end{center}
+% Penanda putih tanpa entri daftar isi (di DAFTAR ISI template
+% asli hanya tercantum satu entri HALAMAN PERSETUJUAN):
 \TeksTersembunyi{HALAMAN PERSETUJUAN}\par
 \onehalfspacing
 
@@ -102,8 +115,8 @@
 
 \vspace{1.2em}
 \begin{center}
-  Dosen Pembimbing 1,\\[1.6cm]
-  \textbf{\NamaPembimbingSatu}\\
+  Dosen Pembimbing 1,\\[2.1cm]
+  \NamaTTD{\NamaPembimbingSatu}\\
   NIDN. \NIDNPembimbingSatu
 \end{center}
 
@@ -120,10 +133,10 @@
   Mengetahui,
 \end{center}
 
-\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{6.8cm}
-                          >{\raggedright\arraybackslash}p{6.8cm}@{}}
-  \NamaFakultas\newline Dekan, & \phantom{Fakultas}\newline Kaprodi \NamaProdi\\[1.6cm]
-  \textbf{\NamaDekan} & \textbf{\NamaKaprodi}\\
+\noindent\begin{tabular}{@{}>{\raggedright\arraybackslash}p{8cm}
+                          >{\raggedright\arraybackslash}p{6cm}@{}}
+  \NamaFakultas\newline Dekan, & \phantom{Fakultas}\newline Kaprodi \NamaProdi\\[2.1cm]
+  \NamaTTD{\NamaDekan} & \NamaTTD{\NamaKaprodi}\\
   NIK. \NIKDekan & NIK. \NIKKaprodi\\
 \end{tabular}
 

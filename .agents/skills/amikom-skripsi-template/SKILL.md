@@ -52,7 +52,8 @@ Ilmu Komputer), `\NamaProdi`, `\NamaFakultas`, `\TahunUjian`, `\TanggalACC`,
 `config/toggles.tex`: `\duapembimbingfalse` untuk pembimbing tunggal (Surat
 Pernyataan Keaslian otomatis menulis `-` untuk Pembimbing 2),
 `\pengujitigafalse` menghapus baris Penguji 3/Pendamping,
-`\daftaristilahtrue` menampilkan Daftar Istilah.
+`\daftaristilahfalse` menyembunyikan Daftar Istilah (default tampil, sesuai
+template asli).
 Halaman Persetujuan menyusun KEDUA varian seperti template asli (2 pembimbing
 lalu pembimbing tunggal) — pilih salah satu dengan berkomentar pada baris
 `\PersetujuanSatuPembimbing` / `\PersetujuanDuaPembimbing` di
@@ -64,16 +65,18 @@ Edit `chapters/bab1.tex`–`bab5.tex`. Struktur sub-bab AMIKOM pakai huruf:
 Sub-sub-bab: `\subsection{...}` → "1. ..."; tingkat keempat → "a. ...".
 Hanya BAB dan sub-bab yang masuk DAFTAR ISI (otomatis, tebal).
 
-### Tabel (wajib: caption di atas, isi TNR 10 spasi 1, dirujuk di naskah)
+### Tabel (wajib: caption di atas, isi TNR 10 spasi 1, kepala abu-abu, dirujuk di naskah)
 ```tex
 \begin{tabel}{@{}c l l@{}}
   \caption{Data mahasiswa}\label{tab:data}\\
   \hline
+  \rowcolor{gray!25}                     % kepala tabel abu-abu (template asli)
   No & NIM & Nama Mahasiswa\\
   \hline
   \endfirsthead
-  \TabelLanjutan{3}{Data mahasiswa}\\      % halaman lanjutan (auto)
+  \TabelLanjutan{3}{Data mahasiswa}\\    % halaman lanjutan (auto)
   \hline
+  \rowcolor{gray!25}
   No & NIM & Nama Mahasiswa\\
   \hline
   \endhead
@@ -141,14 +144,23 @@ proyek (lokalisasi bawaan repo — jangan dihapus atau dipindah).
 - Nomor halaman: romawi bagian awal (sampul dihitung i, nomornya tak
   ditampilkan); arab mulai Bab I; awal bab & bagian awal bawah tengah,
   halaman lanjutan kanan atas; DAFTAR PUSTAKA & LAMPIRAN tanpa nomor.
-- Halaman awal memuat teks putih `HALAMAN SAMPUL`, `HALAMAN JUDUL`,
-  `HALAMAN PERSETUJUAN`, `HALAMAN PENGESAHAN`, `HALAMAN PERNYATAAN KEASLIAN`,
-  `HALAMAN PERSEMBAHAN`, `HALAMAN MOTTO` agar masuk DAFTAR ISI (macro
-  `\HalamanAwal`); halaman berjudul terlihat pakai `\TocHalaman`.
+- Halaman dengan penanda putih (teks tersembunyi, masuk DAFTAR ISI lewat
+  `\HalamanAwal`): `HALAMAN SAMPUL`, `HALAMAN JUDUL`, `HALAMAN
+  PERSETUJUAN`, `HALAMAN PENGESAHAN`, `HALAMAN PERNYATAAN KEASLIAN`.
+  Halaman PERSEMBAHAN & MOTTO memakai judul TERLIHAT bold + `\TocHalaman`
+  (sesuai template asli), begitu juga KATA PENGANTAR dan semua DAFTAR-*.
+- Halaman PERSETUJUAN memuat judul terlihat "PERSETUJUAN" di atas penanda
+  putih; nama dosen di blok tanda tangan otomatis tebal + bergaris bawah
+  (macro `\NamaTTD`, bisa pindah baris); blok 2 pembimbing rata kiri.
+- Halaman PENGESAHAN: tiap penguji = nama bergaris bawah + NIDN di kiri
+  dan garis tanda tangan di kolom kanan (label "Penguji N" tidak dicetak —
+  nama menggantikannya, sesuai versi terisi template asli).
 - Daftar Lampiran: tanpa titik-titik dan tanpa nomor halaman.
-- Kata Pengantar diakhiri kota+tanggal dan kata "Penulis" kanan bawah,
-  tanpa nama terang/tanda tangan.
-- Materai Rp10.000 pada Surat Pernyataan Keaslian (kotak placeholder).
+- Kata Pengantar diakhiri kota+tanggal dan kata "Penulis" RATA KIRI
+  (sesuai template asli), tanpa nama terang/tanda tangan.
+- Kata kunci/Keywords (abstrak) tanpa bold; judul ABSTRACT miring.
+- Materai Rp10.000 pada Surat Pernyataan Keaslian (kotak placeholder,
+  blok tanda tangan vertikal di kanan bawah).
 
 ## What NOT to do
 

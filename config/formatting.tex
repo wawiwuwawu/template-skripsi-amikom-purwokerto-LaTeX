@@ -70,8 +70,11 @@
 \renewcommand{\cftchapfont}{\bfseries}
 \renewcommand{\cftchappagefont}{\bfseries}
 \renewcommand{\cftchappresnum}{BAB }
-\renewcommand{\cftchapaftersnum}{\hspace{0.4em}}
-\setlength{\cftchapnumwidth}{3.2em}        % cukup untuk "BAB IV"
+\renewcommand{\cftchapaftersnum}{}
+% Numwidth harus memuat "BAB IV" lengkap + jarak; jika terlalu
+% sempit, spasi antara angka Romawi dan judul bab hilang
+% ("BAB IITINJAUAN PUSTAKA").
+\setlength{\cftchapnumwidth}{4.6em}        % "BAB IV" + jarak
 \renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
 
 \renewcommand{\cftsecfont}{\bfseries}
@@ -192,6 +195,25 @@
   \chapter*{DAFTAR LAMPIRAN}%
   \TocHalaman{DAFTAR LAMPIRAN}%
   \@starttoc{lampl}%
+}
+\makeatother
+
+% \NamaTTD{nama} — nama dosen/mahasiswa TEBAL dengan garis bawah
+% menerus (posisi tanda tangan, seperti skripsi AMIKOM resmi yang
+% sudah terisi). Nama panjang tetap dapat pindah baris: garis
+% digambar per kata (\underline per kata + titik pindah baris).
+% Catatan: \underline{\textbf{seluruh nama}} tidak bisa pindah
+% baris, dan ulem/soul tidak stabil bersama fontspec, sehingga
+% garis dibuat dengan cara ini.
+\makeatletter
+\newcommand{\NamaTTD}[1]{\expandafter\@Namattd#1 \@nil}
+\def\@Namattd#1 #2\@nil{%
+  \ifx\@nil#2\@nil
+    \underline{\textbf{#1}}%
+  \else
+    \underline{\textbf{#1~}}\allowbreak
+    \@Namattd#2\@nil
+  \fi
 }
 \makeatother
 
