@@ -16,6 +16,18 @@
 \clubpenalty=10000                % cegah baris yatim/piatu
 \widowpenalty=10000
 
+% Word TIDAK memecah kata dengan tanda hubung otomatis
+% (autoHyphenation OFF pada template asli) — matikan hyphenation
+% LaTeX agar titik patah baris mengikuti cara Word mematahkan baris.
+% Patah pada tanda hubung eksplisit (mis. "kuesioner-dll") tetap
+% diizinkan, sama seperti Word.
+\hyphenpenalty=10000
+% Word membenarkan baris dengan jarak antarkata yang longgar tanpa
+% pernah meluber — izinkan LaTeX melakukan hal yang sama agar tidak
+% ada baris yang keluar dari batas teks saat kata panjang tak terpecah.
+\tolerance=9999
+\emergencystretch=3em
+
 % ── Lingkungan `isi` — paragraf isi BAB I–V ─────────────────
 % Template asli (DOCX): paragraf isi BAB menjorok KIRI 0,75cm
 % (baris lanjutan mulai di 4,75cm dari tepi kertas, lebar kolom isi

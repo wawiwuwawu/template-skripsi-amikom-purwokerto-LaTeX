@@ -160,6 +160,15 @@ proyek (lokalisasi bawaan repo — jangan dihapus atau dipindah).
 - Times New Roman 12pt; spasi 2 (Bab I–V, termasuk judul bab);
   spasi 1,5 (daftar & halaman persetujuan/pengesahan); spasi 1 (abstrak,
   dalam tabel, dalam referensi).
+- **Hyphenation MATI** (`\hyphenpenalty=10000` + `\tolerance=9999` +
+  `\emergencystretch=3em` di `config/formatting.tex`) — Word tidak memecah
+  kata dengan tanda hubung otomatis (autoHyphenation OFF pada template
+  asli); patah pada tanda hubung eksplisit tetap diizinkan. Jangan
+  diaktifkan kembali.
+- Frasa contoh yang bold+bergaris bawah di tengah paragraf ("kata "Penulis"
+  tanpa perlu menyebutkan nama dan tanda tangan", "Nomor urut tabel dan
+  gambar ...") memakai `\NamaTTD{...}` — underline per kata agar bisa pindah
+  baris; titik kalimat TETAP DI LUAR garis bawah.
 - Nomor halaman: romawi bagian awal (sampul dihitung i, nomornya tak
   ditampilkan); arab mulai Bab I; awal bab & bagian awal bawah tengah,
   halaman lanjutan kanan atas; DAFTAR PUSTAKA & LAMPIRAN tanpa nomor.
@@ -177,7 +186,15 @@ proyek (lokalisasi bawaan repo — jangan dihapus atau dipindah).
 - Daftar Lampiran: tanpa titik-titik dan tanpa nomor halaman.
 - Kata Pengantar diakhiri kota+tanggal dan kata "Penulis" RATA KIRI
   (sesuai template asli), tanpa nama terang/tanda tangan.
-- Kata kunci/Keywords (abstrak) tanpa bold; judul ABSTRACT miring.
+- Kata kunci (abstrak) tanpa bold; ABSTRACT seluruhnya miring (judul, isi,
+  Keywords tanpa titik) — sesuai template asli.
+- Teks contoh verbatim termasuk typo aslinya (mis. NIM baris 2 Tabel 2.2 =
+  11.11.0001, "landasan toeri", "WermanKasoep", "P Anuradha,Rajeshwar...",
+  "Mikrokontroller" dua l di kolom tertentu) — jangan "diperbaiki".
+- `reference/Template_Skripsi.md` adalah hasil konversi pandoc untuk
+  membaca teks DOCX — TIDAK LENGKAP (konten text-box/floating terbuang,
+  daftar huruf a.,b. dinormalisasi jadi angka); untuk keputusan fidelitas
+  tetap bedah XML `word/document.xml` (cek `w:i`/`w:u` **dengan `w:val`**).
 - Materai Rp10.000 pada Surat Pernyataan Keaslian (kotak placeholder,
   blok tanda tangan vertikal di kanan bawah).
 
